@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DNNGo_DNNGalleryPro>
+  <Settings>
+
+
+
+    <Setting>
+      <Name><![CDATA[logo]]></Name>
+      <Alias><![CDATA[Logo]]></Alias>
+      <Width><![CDATA[300]]></Width>
+      <Rows><![CDATA[1]]></Rows>
+      <DefaultValue><![CDATA[]]></DefaultValue>
+		<ControlType><![CDATA[Urls]]></ControlType>
+		<Direction><![CDATA[Vertical]]></Direction>
+		<ListContent><![CDATA[U,F]]></ListContent>
+      <Description><![CDATA[]]></Description>
+      <Required><![CDATA[False]]></Required>
+      <Verification><![CDATA[url]]></Verification>
+ </Setting>
+
+	  <Setting>
+		  <Name><![CDATA[Title]]></Name>
+		  <Alias><![CDATA[Title]]></Alias>
+		  <Width><![CDATA[500]]></Width>
+		  <Rows><![CDATA[1]]></Rows>
+		  <DefaultValue><![CDATA[Welcome to the Play'n GO website]]></DefaultValue>
+		  <ControlType><![CDATA[TextBox]]></ControlType>
+		  <Direction><![CDATA[Vertical]]></Direction>
+		  <ListContent><![CDATA[]]></ListContent>
+		  <Description><![CDATA[]]></Description>
+		  <Required><![CDATA[False]]></Required>
+		  <Verification><![CDATA[optional]]></Verification>
+		  <Group><![CDATA[]]></Group>
+		  <Categories><![CDATA[]]></Categories>
+		  <Layout><![CDATA[Left]]></Layout>
+	  </Setting>
+
+	  <Setting>
+		  <Name><![CDATA[Description]]></Name>
+		  <Alias><![CDATA[Description]]></Alias>
+		  <Width><![CDATA[300]]></Width>
+		  <Rows><![CDATA[10]]></Rows>
+		  <DefaultValue><![CDATA[<p>Play'n GO is a market leader in the gambling and financial trading industries. We are the world's largest online casino software supplier offering cutting-edge, value added solutions to the industry's leading operators.</p><p>Play'n GO is committed to responsibly communicating with our stakeholders. To enter this site, you must be old enough to access gambling products in your country.</p>]]></DefaultValue>
+		  <ControlType><![CDATA[RichTextBox]]></ControlType>
+		  <Direction><![CDATA[Vertical]]></Direction>
+		  <ListContent><![CDATA[]]></ListContent>
+		  <Description><![CDATA[]]></Description>
+		  <Required><![CDATA[False]]></Required>
+		  <Verification><![CDATA[optional]]></Verification>
+		  <Group><![CDATA[]]></Group>
+		  <Categories><![CDATA[]]></Categories>
+		  <Layout><![CDATA[Left]]></Layout>
+	  </Setting>
+
+
+	  <Setting>
+		  <Name><![CDATA[age]]></Name>
+		  <Alias><![CDATA[Age Text]]></Alias>
+		  <Width><![CDATA[500]]></Width>
+		  <Rows><![CDATA[1]]></Rows>
+		  <DefaultValue><![CDATA[Please confirm you are of legal age before entering this site]]></DefaultValue>
+		  <ControlType><![CDATA[TextBox]]></ControlType>
+		  <Direction><![CDATA[Vertical]]></Direction>
+		  <ListContent><![CDATA[]]></ListContent>
+		  <Description><![CDATA[]]></Description>
+		  <Required><![CDATA[False]]></Required>
+		  <Verification><![CDATA[optional]]></Verification>
+		  <Group><![CDATA[]]></Group>
+		  <Categories><![CDATA[]]></Categories>
+		  <Layout><![CDATA[Left]]></Layout>
+	  </Setting>
+	  <Setting>
+		  <Name><![CDATA[message]]></Name>
+		  <Alias><![CDATA[Message 1]]></Alias>
+		  <Width><![CDATA[500]]></Width>
+		  <Rows><![CDATA[1]]></Rows>
+		  <DefaultValue><![CDATA[Sorry you must be over 18 to enter.]]></DefaultValue>
+		  <ControlType><![CDATA[TextBox]]></ControlType>
+		  <Direction><![CDATA[Vertical]]></Direction>
+		  <ListContent><![CDATA[]]></ListContent>
+		  <Description><![CDATA[]]></Description>
+		  <Required><![CDATA[False]]></Required>
+		  <Verification><![CDATA[optional]]></Verification>
+		  <Group><![CDATA[]]></Group>
+		  <Categories><![CDATA[]]></Categories>
+		  <Layout><![CDATA[Left]]></Layout>
+	  </Setting>
+	  <Setting>
+		  <Name><![CDATA[message2]]></Name>
+		  <Alias><![CDATA[Message 2]]></Alias>
+		  <Width><![CDATA[500]]></Width>
+		  <Rows><![CDATA[1]]></Rows>
+		  <DefaultValue><![CDATA[Please enter a valid date of birth.]]></DefaultValue>
+		  <ControlType><![CDATA[TextBox]]></ControlType>
+		  <Direction><![CDATA[Vertical]]></Direction>
+		  <ListContent><![CDATA[]]></ListContent>
+		  <Description><![CDATA[]]></Description>
+		  <Required><![CDATA[False]]></Required>
+		  <Verification><![CDATA[optional]]></Verification>
+		  <Group><![CDATA[]]></Group>
+		  <Categories><![CDATA[]]></Categories>
+		  <Layout><![CDATA[Left]]></Layout>
+	  </Setting>
+
+
+		<Setting>
+				<Name><![CDATA[Expires]]></Name>
+				<Alias><![CDATA[Expires]]></Alias>
+				<Width><![CDATA[100]]></Width>
+				<Rows><![CDATA[1]]></Rows>
+				<DefaultValue><![CDATA[30]]></DefaultValue>
+				<ControlType><![CDATA[TextBox]]></ControlType>
+				<Direction><![CDATA[Vertical]]></Direction>
+				<ListContent><![CDATA[]]></ListContent>
+				<Description><![CDATA[Day]]></Description>
+				<Required><![CDATA[True]]></Required>
+				<Verification><![CDATA[]]></Verification>
+				<Group><![CDATA[]]></Group>
+				<Categories><![CDATA[]]></Categories>
+		</Setting>
+
+		<Setting>
+				<Name><![CDATA[Versions]]></Name>
+				<Alias><![CDATA[Versions]]></Alias>
+				<Width><![CDATA[100]]></Width>
+				<Rows><![CDATA[1]]></Rows>
+				<DefaultValue><![CDATA[1]]></DefaultValue>
+				<ControlType><![CDATA[TextBox]]></ControlType>
+				<Direction><![CDATA[Vertical]]></Direction>
+				<ListContent><![CDATA[]]></ListContent>
+				<Description><![CDATA[]]></Description>
+				<Required><![CDATA[True]]></Required>
+				<Verification><![CDATA[integer]]></Verification>
+				<Group><![CDATA[]]></Group>
+				<Categories><![CDATA[]]></Categories>
+		</Setting>
+
+
+	  <Setting>
+		  <Name><![CDATA[noscript]]></Name>
+		  <Alias><![CDATA[No Script Skip]]></Alias>
+		  <Width><![CDATA[100]]></Width>
+		  <Rows><![CDATA[1]]></Rows>
+		  <DefaultValue><![CDATA[false]]></DefaultValue>
+		  <ControlType><![CDATA[CheckBox]]></ControlType>
+		  <Direction><![CDATA[Vertical]]></Direction>
+		  <ListContent><![CDATA[]]></ListContent>
+		  <Description><![CDATA[]]></Description>
+		  <Required><![CDATA[False]]></Required>
+		  <Verification><![CDATA[]]></Verification>
+		  <Group><![CDATA[Basic Options]]></Group>
+		  <Categories><![CDATA[Basic Options]]></Categories>
+		  <Layout><![CDATA[]]></Layout>
+	  </Setting>
+	<Setting>
+		<Name><![CDATA[noscripturl]]></Name>
+		<Alias><![CDATA[URL]]></Alias>
+		<Width><![CDATA[300]]></Width>
+		<Rows><![CDATA[1]]></Rows>
+		<DefaultValue><![CDATA[]]></DefaultValue>
+		<ControlType><![CDATA[Urls]]></ControlType>
+		<Direction><![CDATA[Vertical]]></Direction>
+		<ListContent><![CDATA[U,P]]></ListContent>
+		<Description><![CDATA[]]></Description>
+		<Required><![CDATA[False]]></Required>
+		<Verification><![CDATA[url]]></Verification>
+		<Condition><![CDATA[#Ctl_noscript]]></Condition>
+	</Setting>
+
+	  <Setting>
+		  <Name><![CDATA[Roles]]></Name>
+		  <Alias><![CDATA[Roles]]></Alias>
+		  <Width><![CDATA[300]]></Width>
+		  <Rows><![CDATA[1]]></Rows>
+		  <DefaultValue><![CDATA[]]></DefaultValue>
+		  <ControlType><![CDATA[TextBox]]></ControlType>
+		  <Direction><![CDATA[Vertical]]></Direction>
+		  <ListContent><![CDATA[]]></ListContent>
+		  <Description><![CDATA[]]></Description>
+		  <Required><![CDATA[False]]></Required>
+		  <Verification><![CDATA[optional]]></Verification>
+		  <Group><![CDATA[]]></Group>
+		  <Categories><![CDATA[]]></Categories>
+		  <Layout><![CDATA[Left]]></Layout>
+	  </Setting>
+
+
+
+  </Settings>
+</DNNGo_DNNGalleryPro>
+
+
+

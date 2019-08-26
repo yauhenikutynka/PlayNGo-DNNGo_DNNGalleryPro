@@ -1,0 +1,146 @@
+/* .Cusotm_downloads_Default */
+.Cusotm_downloads_Default .setting{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+
+	position: relative;
+    clear: both;
+    padding: 26px 0;
+    text-align: center;
+}
+.Cusotm_downloads_Default table.dataTable.no-footer{
+	border-top: 1px solid #dddddd;
+	border-bottom: 1px solid #dddddd;
+}
+.Cusotm_downloads_Default table.dataTable thead th{
+	border-bottom: 1px solid #bbbbbb;
+}
+.Cusotm_downloads_Default table.dataTable tbody tr:first-child td{
+    border-top: none;
+}
+.Cusotm_downloads_Default table.dataTable tbody td{
+	border-top: 1px solid #dddddd;
+}
+.Cusotm_downloads_Default .dataTables_wrapper .dataTables_filter{
+	float: none;
+	text-align: left;
+	margin: 0;
+}
+.Cusotm_downloads_Default .dataTables_wrapper .client-zone-search-container{
+	position: relative;
+	display: inline-block;
+	margin-bottom: 26px;
+}
+.Cusotm_downloads_Default .dataTables_wrapper .client-zone-search-container .fa-search{
+	position: absolute;
+    left: 0;
+    top: 0;
+    width: 45px;
+    height: 40px;
+    line-height: 40px;
+	text-align: center;
+	color: #20a3fc;
+	cursor: pointer;
+}
+.Cusotm_downloads_Default .dataTables_wrapper .client-zone-search-container .fa-times{
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 45px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+	color: #d9534f;
+	cursor: pointer;
+}
+.Cusotm_downloads_Default .dataTables_wrapper .dataTables_filter label{
+	margin: 0;
+}
+.Cusotm_downloads_Default .dataTables_wrapper .dataTables_filter input{
+	position: relative;
+    width: 100%;
+    max-width: 295px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    color: #666;
+    padding-left: 45px;
+    padding-right: 45px;
+    border: 1px solid #ebebeb;
+	border-radius: 3px;
+	margin: 0;
+}
+.Cusotm_downloads_Default .dataTables_wrapper .dataTables_paginate{
+	float: none;
+	text-align: center;
+}
+
+.Cusotm_downloads_Default .dataTables_wrapper .dataTables_length select{
+	width: 80px;
+    height: 40px;
+	padding-left: 10px;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 1.42857143;
+	border-color: rgba(0,0,0,0.1);
+	border-radius: 4px;
+}
+.Cusotm_downloads_Default .dataTables_wrapper .dataTables_paginate .paginate_button{
+	color: #666666 !important;
+    background: transparent;
+	border-color: #BFBFBF;
+	border-radius: 4px;
+	margin-left: 4px;
+	margin-right: 4px;
+}
+.Cusotm_downloads_Default .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.Cusotm_downloads_Default .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover,
+.Cusotm_downloads_Default .dataTables_wrapper .dataTables_paginate .paginate_button:not(.disabled):hover,
+.Cusotm_downloads_Default .dataTables_wrapper .dataTables_paginate .paginate_button:not(.disabled):active{
+	color: #20a3fc !important;
+    background: transparent !important;
+	border-color: #20a3fc !important;;
+	border-radius: 4px;
+	box-shadow: none;
+}
+
+
+.Cusotm_downloads_Default table.dataTable thead th:nth-child(1){
+	width: 41.25%;
+}
+.Cusotm_downloads_Default table.dataTable thead th:nth-child(2){
+	width: 25.4167%;
+}
+.Cusotm_downloads_Default table.dataTable thead th:nth-child(3){
+	width: 33.3333%;
+}
+.Cusotm_downloads_Default table.dataTable tbody th,
+.Cusotm_downloads_Default table.dataTable tbody td{
+    padding-right: 18px;
+    padding-left: 18px;
+}
+
+@media only screen and (max-width: 1199px){
+	.Cusotm_downloads_Default table.dataTable thead th:nth-child(1),
+	.Cusotm_downloads_Default table.dataTable thead th:nth-child(2),
+	.Cusotm_downloads_Default table.dataTable thead th:nth-child(3){
+		width: auto;
+	}
+}
+@media only screen and (max-width: 768px){
+	.Cusotm_downloads_Default .setting {
+		display: block;
+		text-align: left;
+	}
+	.Cusotm_downloads_Default .dataTables_wrapper .dataTables_paginate{
+		text-align: left;
+	}
+	.Cusotm_downloads_Default .dataTables_wrapper .dataTables_length{
+		float: left;
+		margin-top: 26px;
+	}
+}
+

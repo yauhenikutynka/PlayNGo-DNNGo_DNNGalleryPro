@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DNNGo_DNNGalleryPro>
+	<Settings>
+	
+		<Setting>
+			<Name><![CDATA[Title]]></Name>
+			<Alias><![CDATA[Icon Title]]></Alias>
+			<Width><![CDATA[300]]></Width>
+			<Rows><![CDATA[1]]></Rows>
+			<DefaultValue><![CDATA[]]></DefaultValue>
+			<ControlType><![CDATA[TextBox]]></ControlType>
+			<Direction><![CDATA[Vertical]]></Direction>
+			<ListContent><![CDATA[]]></ListContent>
+			<Description><![CDATA[]]></Description>
+			<Required><![CDATA[False]]></Required>
+			<Verification><![CDATA[optional]]></Verification>
+			<Group><![CDATA[]]></Group>
+			<Categories><![CDATA[]]></Categories>
+			<Layout><![CDATA[Left]]></Layout>
+		</Setting>
+		<Setting> 
+			<Name><![CDATA[IconStyle]]></Name>  
+			<Alias><![CDATA[Icon Style]]></Alias>  
+			<Width><![CDATA[300]]></Width>  
+			<Rows><![CDATA[1]]></Rows>  
+			<DefaultValue><![CDATA[fa fa-facebook]]></DefaultValue>  
+			<ControlType><![CDATA[IconPicker]]></ControlType>  
+			<Direction><![CDATA[Vertical]]></Direction>  
+			<ListContent><![CDATA[]]></ListContent>  
+			<Description><![CDATA[]]></Description>  
+			<Required><![CDATA[false]]></Required>  
+			<Group><![CDATA[]]></Group>
+			<Categories><![CDATA[]]></Categories>
+			<Layout><![CDATA[Left]]></Layout> 
+		</Setting> 
+		<Setting> 
+			<Name><![CDATA[IconLink]]></Name>  
+			<Alias><![CDATA[Link Url]]></Alias>  
+			<Width><![CDATA[240]]></Width>  
+			<Rows><![CDATA[1]]></Rows>  
+			<DefaultValue><![CDATA[]]></DefaultValue>  
+			<ControlType><![CDATA[Urls]]></ControlType>  
+			<Direction><![CDATA[Vertical]]></Direction>  
+			<ListContent><![CDATA[U,P]]></ListContent>  
+			<Description><![CDATA[]]></Description>  
+			<Required><![CDATA[False]]></Required>  
+			<Verification><![CDATA[optional]]></Verification>  
+			<Group><![CDATA[]]></Group>
+			<Categories><![CDATA[]]></Categories>
+			<Layout><![CDATA[Left]]></Layout> 
+		</Setting>  
+		<Setting> 
+			<Name><![CDATA[IconLinkTarget]]></Name>  
+			<Alias><![CDATA[Target]]></Alias>  
+			<Width><![CDATA[240]]></Width>  
+			<Rows><![CDATA[1]]></Rows>  
+			<DefaultValue><![CDATA[_blank]]></DefaultValue>  
+			<ControlType><![CDATA[DropDownList]]></ControlType>  
+			<Direction><![CDATA[Vertical]]></Direction>  
+			<ListContent><![CDATA[_blank|_parent|_self|_top|new]]></ListContent>  
+			<Description><![CDATA[]]></Description>  
+			<Required><![CDATA[True]]></Required>  
+			<Verification><![CDATA[]]></Verification>  
+			<Group><![CDATA[]]></Group>
+			<Categories><![CDATA[]]></Categories>
+			<Layout><![CDATA[Left]]></Layout> 
+		</Setting>  
+		<Setting> 
+			<Name><![CDATA[IconBackground]]></Name>  
+			<Alias><![CDATA[Icon Background]]></Alias>  
+			<Width><![CDATA[120]]></Width>  
+			<Rows><![CDATA[1]]></Rows>  
+			<DefaultValue><![CDATA[#333333]]></DefaultValue>  
+			<ControlType><![CDATA[ColorPicker]]></ControlType>  
+			<Direction><![CDATA[Vertical]]></Direction>  
+			<ListContent><![CDATA[]]></ListContent>  
+			<Description><![CDATA[]]></Description>  
+			<Required><![CDATA[True]]></Required>  
+			<Verification><![CDATA[optional]]></Verification>  
+			<Group><![CDATA[]]></Group>
+			<Categories><![CDATA[]]></Categories>
+			<Layout><![CDATA[]]></Layout> 
+		</Setting>  
+		
+		
+		
+	</Settings>
+</DNNGo_DNNGalleryPro>
+
+
+

@@ -1,0 +1,42 @@
+version: 04.00.00
+1.增加对下载功能的支持，加入下载皮肤。
+2.统计单个和整体的下载次数.
+3.增加下载记录日志功能。
+4.
+
+
+
+version: 03.00.00
+1.新增效果 ResponsiveTabs,现已集成有25种效果。
+
+version: 04.00.00
+1.重新设计管理界面的架构,让模块管理更加方便高效。
+
+
+
+version: 04.01.00
+1.优化部分效果参数不合理的情况。
+2.解决部分效果在某些环境下出现bug的情况。
+3.替换第12个3D效果的插件及运行方式。
+
+
+version: 04.02.00
+1.增加效果 "Effect_10_FlipWall" 的分页功能。
+2.增加效果 "Effect_18_ImagesLoaded" 的分页功能。
+3.增加效果 "Effect_19_Portfolio" 的分页功能。
+4.增加效果 "Effect_20_PhotoGallery" 的分页功能。
+5.增加效果 "Effect_24_OurTeam" 的分页功能。
+
+
+version: 04.02.05
+1.修复Disable Time无法设置的bug。
+
+version: 04.03.00
+1.增加切换默认编辑器的功能，可以在Tinymce和Telerik之间切换。
+
+
+
+version: 04.03.05
+1.升级效果"Effect_17_WeatherSlider"。
+2.修复效果"Effect_19_Portfolio"中分组名存在特殊字符停止响应的问题。
+2.修复某些效果的兼容性。

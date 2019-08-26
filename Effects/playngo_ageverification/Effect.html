@@ -1,0 +1,156 @@
+﻿#if(!${xf.ViewXmlSetting("Roles",'')} || !${Module.UserInfo.IsInRole(${xf.ViewXmlSetting("Roles",'')})})
+	#if(${xf.ViewXmlSetting("noscript",false)} )
+	<noscript><meta http-equiv="Refresh" content="0;url=${xf.ViewLinkUrl(${xf.ViewXmlSetting("noscripturl","")})}" /></noscript> 
+	#end
+	<div class="playngo_ageverification" id="playngo_ageverification${ModuleID}">
+		<div class="dialog" role="document">
+			<div class="content">
+				#if(${xf.ViewXmlSetting("logo","")} != "")
+				<div class="header">
+					<img src="${xf.ViewLinkUrl(${xf.ViewXmlSetting("logo","")})}" alt="${xf.ViewXmlSetting("Title","")}"  title="${xf.ViewXmlSetting("Title","")}">
+				</div>
+				#end
+				<div class="main">
+					<div class="alert alert-danger" style="display: none;">
+						<b>Alert:</b> <span class="age-error"></span>
+					</div>
+					<div class="content">
+						<div class="save-info">
+						<h3 class="title">${xf.ViewXmlSetting("Title","Welcome to the Play'n GO website.")}</h3>
+						${xf.ViewXmlSetting("Description","<p>Play'n GO is a market leader in the gambling and financial trading industries.We are the world's largest online casino software supplier offering cutting-edge, value added solutions to the Industry's leading operators.</p><p>Play'n GO is committed to responsibly communicating with our stakeholders.To enter this site, you must be old enough to access gambling products in your country.</p>")}
+						</div>
+
+						<h3 class="title">${xf.ViewXmlSetting("age","Please confirm you are of legal age before entering this site")}</h3>
+					</div>
+					<div class="age-select">
+						<div class="form-group pull-left col-xs-12 col-md-4">
+							<select class="form-control daylsit" name="day">
+								<option value="">Day</option>
+								<option value="01">01</option>
+								<option value="02">02</option>
+								<option value="03">03</option>
+								<option value="04">04</option>
+								<option value="05">05</option>
+								<option value="06">06</option>
+								<option value="07">07</option>
+								<option value="08">08</option>
+								<option value="09">09</option>
+								<option value="10">10</option>
+								<option value="11">11</option>
+								<option value="12">12</option>
+								<option value="13">13</option>
+								<option value="14">14</option>
+								<option value="15">15</option>
+								<option value="16">16</option>
+								<option value="17">17</option>
+								<option value="18">18</option>
+								<option value="19">19</option>
+								<option value="20">20</option>
+								<option value="21">21</option>
+								<option value="22">22</option>
+								<option value="23">23</option>
+								<option value="24">24</option>
+								<option value="25">25</option>
+								<option value="26">26</option>
+								<option value="27">27</option>
+								<option value="28">28</option>
+								<option value="29">29</option>
+								<option value="30">30</option>
+								<option value="31">31</option>
+							</select>
+						</div>
+						<div class="form-group pull-left col-xs-12 col-md-4">
+							<select class="form-control monthlist" name="month">
+								<option value="">Month</option>
+								<option value="01">01</option>
+								<option value="02">02</option>
+								<option value="03">03</option>
+								<option value="04">04</option>
+								<option value="05">05</option>
+								<option value="06">06</option>
+								<option value="07">07</option>
+								<option value="08">08</option>
+								<option value="09">09</option>
+								<option value="10">10</option>
+								<option value="11">11</option>
+								<option value="12">12</option>
+							</select>
+						</div>
+						<div class="form-group pull-left col-xs-12 col-md-4">
+							<select class="form-control yearlist" name="year">
+								<option value="">Year</option>
+							</select>
+						</div>
+						
+					</div>
+					<div class="content-lower text-center">
+						<a class="verify" href="#">Enter Site</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script> 
+	if(Cookies.get('playngo_ageverification') && jQuery.parseJSON('['+Cookies.get('playngo_ageverification')+']')[0]["versions"] == ${xf.ViewXmlSetting("Versions","1")}){
+		$("#playngo_ageverification${ModuleID}").remove();
+	}else{
+		$("#playngo_ageverification${ModuleID}").addClass("active");
+		$("body").addClass("ageverification-hidden");
+
+		var year =new Date();
+		year = year.getFullYear();
+
+		for(i=0;i<=150;i++){
+			$("#playngo_ageverification${ModuleID} .yearlist").append("<option value=\""+(year-i)+"\">"+(year-i)+"</option>");
+		}
+		
+		var day=$("#playngo_ageverification${ModuleID} .daylsit");
+		var month=$("#playngo_ageverification${ModuleID} .monthlist");
+		var year=$("#playngo_ageverification${ModuleID} .yearlist");
+		var error=$("#playngo_ageverification${ModuleID} .age-error");
+
+		function satisfy18(time) {
+			var nowDate = new Date(); 
+			var mouth = nowDate.getMonth()+1; 
+			var day = nowDate.getDate(); 
+			var year = nowDate.getFullYear()-18; 
+			if (mouth === 2 && day >= 28){ 
+				day = isOrdinaryYear(year) ? 28 : 29; 
+			} 
+			var oldDate = new Date(mouth+'/'+day+'/'+year).getTime(); 
+			return oldDate < time.getTime() ? false : true;
+		}
+		function isOrdinaryYear(y) {
+			if((y%4===0 && y % 100 !== 0)|| y % 400 === 0 ){
+				return false
+			}
+			return true;
+		}
+		$("#playngo_ageverification${ModuleID} .verify").on("click",function(e){
+				e.preventDefault();
+				if(day.val() && month.val() && year.val()){
+					var  userdate= month.val()+"/"+day.val()+"/"+year.val();
+					if(satisfy18(new Date(userdate))){
+					Cookies.set('playngo_ageverification',{"term":$("#playngo_ageverification${ModuleID} .save-info").text(),"date":new Date(),"versions":"${xf.ViewXmlSetting("Versions","")}"}, { expires: ${xf.ViewXmlSetting("Expires","30")} });
+					$("#playngo_ageverification${ModuleID}").removeClass("active");
+					$("body").removeClass("ageverification-hidden");
+
+					}else{
+						
+						error.html("${xf.ViewXmlSetting("message","Sorry you must be over 18 to enter.")}").parent().fadeIn();
+						$("#playngo_ageverification${ModuleID} .dialog").stop().animate({scrollTop:0},300);
+					}
+				}else{
+					error.html("${xf.ViewXmlSetting("message2","Please enter a valid date of birth.")}").parent().fadeIn();
+					$("#playngo_ageverification${ModuleID} .dialog").stop().animate({scrollTop:0},300);
+				}
+			
+		});
+
+	}
+
+
+	</script>
+#end
+

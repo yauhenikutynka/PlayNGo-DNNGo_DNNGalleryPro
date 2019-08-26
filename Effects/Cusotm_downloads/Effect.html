@@ -1,0 +1,88 @@
+﻿<div id="Cusotm_downloads_${ModuleID}" class="$ThemeName">
+	<table class="dataTable stripe" cellspacing="0" width="100%">
+		<thead>
+			<tr>
+				<th>${xf.ViewXmlSetting("firstColumnName","Game")}</th>
+				<th>${xf.ViewXmlSetting("secondColumnName","Type")}</th>
+				<th>${xf.ViewXmlSetting("thirdColumnName","Download")}</th>
+			</tr>
+		</thead>
+		<tbody>
+
+			#if($SliderList.Count > 0) 
+				#foreach($SliderItem in $SliderList)
+					<tr>
+						<td>${xf.ViewSliderSetting($SliderItem,"firstItem","")}</td>
+						<td>${xf.ViewSliderSetting($SliderItem,"secondItem","")}</td>
+						<td><a class="dg-btn-1 btn-accent hover-black radius-3px"  target="_blank" href="${xf.PictureUrl($SliderItem,"thirdItem","")}" title="Download Link"><i class="fa fa-download"></i> Download</a></td>
+					</tr>
+				#end
+			#end
+		</tbody>
+	</table>
+</div>
+
+
+
+<script>
+	$(document).ready(function() {
+
+		var module = $('#Cusotm_downloads_${ModuleID}');
+
+		var oTable = module.find('table').eq(0).dataTable( {
+			"lengthMenu": [ [10, 50, -1], [10, 50, "All"] ],
+			"dom": '<"client-zone-search-container" f <"fa fa-search"> <"fa fa-times"> >t<"setting" <> pl>',
+			"pagingType": "full_numbers",
+			"responsive": true,
+			// "stateSave": true,
+			// "stateDuration": 0,
+			"searchDelay": 350,
+			"columnDefs": [
+					{ "orderable": false, "targets": 2 },
+					{ "searchable": false, "targets": 2 }
+			],
+			"language": {
+				search: "_INPUT_",
+				searchPlaceholder: "Search Download",
+				lengthMenu: "Items per page _MENU_",
+				paginate: {
+					"first": '<span class="fa fa-angle-double-left"></span>',
+					"previous": '<span class="fa fa-angle-left"></span>',
+					"next": '<span class="fa fa-angle-right"></span>',
+					"last": '<span class="fa fa-angle-double-right"></span>'
+				}
+
+			}
+		} );
+
+		var searchInput = module.find(".client-zone-search-container input");
+        var searchBtn = module.find(".client-zone-search-container div.fa-search");
+        var searchClear = module.find(".client-zone-search-container div.fa-times");
+
+		searchInput.bind('input porpertychange',function(){
+			if ( searchInput.val() != "") {
+                    searchClear.fadeIn();
+					console.log(1);
+			} else {
+                    searchClear.fadeOut();
+					console.log(2);
+			}
+		});
+
+		searchBtn.click(function () {
+			oTable.fnFilter( searchInput.val() );
+        });
+
+		var table = $('#example').DataTable();
+		
+        searchClear.click(function () {
+            searchInput.val("");
+			oTable.fnFilter( "" );
+            $(this).fadeOut();
+        });
+
+
+
+
+	} );
+</script>

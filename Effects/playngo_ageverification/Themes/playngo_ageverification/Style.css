@@ -1,0 +1,107 @@
+.playngo_ageverification{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 10000;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 200ms ease-in;
+    -webkit-overflow-scrolling : touch;
+}
+.playngo_ageverification.active{
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.playngo_ageverification .dialog{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    background-color: #e5e5e5;
+    text-align: center;
+    width: 900px;
+    max-width:calc(100% - 30px);
+    max-height: calc(100% - 30px);
+    margin:0;
+    visibility: hidden;
+    opacity: 0;
+    margin-top: -50px;
+    transition: all 300ms ease-out; 
+    transition-delay: 200ms;
+    overflow: hidden;
+    overflow-y: auto;
+
+}
+.playngo_ageverification.active .dialog{
+    visibility: visible;
+    opacity: 1;
+    margin-top: 0px;
+}
+
+.playngo_ageverification .header{
+    background-color: #FFF;
+    padding: 15px;
+}
+.playngo_ageverification .header img{
+    max-width: 100%;
+}
+.playngo_ageverification .main{
+    padding: 15px 15px 30px;
+    color: #6b6f70;
+    font-size: 18px;
+    line-height: 1.42;
+}
+.playngo_ageverification .main p{
+    margin-bottom: 10px;
+}
+.playngo_ageverification .main .title{
+    font-size: 22.5px;
+    font-weight: 700;
+    color: #20a3f0;
+    line-height: 1.42;
+    margin: 20px 0 10px;
+}
+.playngo_ageverification .main .verify,
+.playngo_ageverification .main .verify:link{
+    color: #fff;
+    background: none;
+    border:none;
+    background-color: #20a3f0;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    padding: 10px 20px 10px;
+    font-size: 13px;
+    border: 1px solid transparent;
+    transition: background-color 200ms ease-in;
+}
+.playngo_ageverification .main .verify:hover{
+    background-color: #191919;
+    text-decoration: none;
+}
+.playngo_ageverification .age-select{
+    padding: 15px 0 10px;
+}
+.playngo_ageverification .age-select::after{
+    content: "";
+    overflow: hidden;
+    width: 100%;
+    clear: both;
+    display: block;
+}
+
+body.ageverification-hidden{
+    overflow: hidden!important;
+    width: 100%; 
+    height: 100%; 
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 10000;
+}

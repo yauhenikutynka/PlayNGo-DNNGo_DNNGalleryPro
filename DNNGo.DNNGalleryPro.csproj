@@ -1,0 +1,2083 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1779BEEE-45A5-4EED-AD90-E3BA89B69361}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DNNGo.Modules.DNNGalleryPro</RootNamespace>
+    <AssemblyName>DNNGo.Modules.DNNGalleryPro</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CNVelocity, Version=1.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll_Storage\CNVelocity.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetNuke">
+      <HintPath>..\..\Bin\DotNetNuke.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetNuke.Web.Client, Version=6.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\bin\DotNetNuke.Web.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ModuleCore\Attribute\TextAttribute.cs" />
+    <Compile Include="ModuleCore\Base\baseController.cs" />
+    <Compile Include="ModuleCore\Base\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuleCore\Base\basePortalModule.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuleCore\Base\EnumCommon.cs" />
+    <Compile Include="ModuleCore\Base\MessageTips.cs" />
+    <Compile Include="ModuleCore\Base\TokenCollection.cs" />
+    <Compile Include="ModuleCore\Entities\DNNGo_DNNGalleryPro_FileLogs.Biz.cs" />
+    <Compile Include="ModuleCore\Entities\DNNGo_DNNGalleryPro_FileLogs.cs" />
+    <Compile Include="ModuleCore\Entities\XmlLayerEntity.cs" />
+    <Compile Include="ModuleCore\Utils\TimeZoneHelper.cs" />
+    <Compile Include="ModuleCore\XmlEntities\OptinItem.cs" />
+    <Compile Include="Resource_RichUrls.ascx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Resource_RichUrls.ascx.designer.cs">
+      <DependentUpon>Resource_RichUrls.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleCore\Entities\DNNGo_DNNGalleryPro_Files.cs" />
+    <Compile Include="ModuleCore\Entities\DNNGo_DNNGalleryPro_Group.cs" />
+    <Compile Include="ModuleCore\Entities\DNNGo_DNNGalleryPro_Layer.Biz.cs" />
+    <Compile Include="ModuleCore\Entities\DNNGo_DNNGalleryPro_Layer.cs" />
+    <Compile Include="ModuleCore\Entities\DNNGo_DNNGalleryPro_Slider.cs" />
+    <Compile Include="ModuleCore\Entities\DNNGo_DNNGalleryPro_Slider_Group.cs" />
+    <Compile Include="ModuleCore\Entities\DNNGo_DNNGalleryPro_Slider.Biz.cs" />
+    <Compile Include="ModuleCore\Entities\DNNGo_DNNGalleryPro_Slider_Group.Biz.cs" />
+    <Compile Include="ModuleCore\Entities\DNNGo_DNNGalleryPro_Files.Biz.cs" />
+    <Compile Include="ModuleCore\Entities\DNNGo_DNNGalleryPro_Group.Biz.cs" />
+    <Compile Include="ModuleCore\Entities\XmlSliserEntity.cs" />
+    <Compile Include="ModuleCore\Entities\KeyValueEntity.cs" />
+    <Compile Include="ModuleCore\Entities\GallerySettingsEntity.cs" />
+    <Compile Include="ModuleCore\Entities\MenuTabs.cs" />
+    <Compile Include="ModuleCore\Entities\GalleryGroupEntity.cs" />
+    <Compile Include="ModuleCore\Templates\TemplateFormat.cs" />
+    <Compile Include="ModuleCore\Templates\VelocityHelper.cs" />
+    <Compile Include="ModuleCore\Utils\Common.cs" />
+    <Compile Include="ModuleCore\Utils\ControlHelper.cs" />
+    <Compile Include="ModuleCore\Utils\ConvertTo.cs" />
+    <Compile Include="ModuleCore\Utils\EnumHelper.cs" />
+    <Compile Include="ModuleCore\Utils\EXIFMetaData.cs" />
+    <Compile Include="ModuleCore\Utils\FileSystemUtils.cs" />
+    <Compile Include="ModuleCore\Utils\GenerateThumbnail.cs" />
+    <Compile Include="ModuleCore\Utils\ImportExportHelper.cs" />
+    <Compile Include="ModuleCore\Utils\ManagedThreadPool.cs" />
+    <Compile Include="ModuleCore\Utils\Pager.cs" />
+    <Compile Include="ModuleCore\Utils\WebClientX.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModuleCore\Utils\WebHelper.cs" />
+    <Compile Include="ModuleCore\XCode\Attributes\BindColumnAttribute.cs" />
+    <Compile Include="ModuleCore\XCode\Attributes\BindTableAttribute.cs" />
+    <Compile Include="ModuleCore\XCode\Attributes\TableMapAttribute.cs" />
+    <Compile Include="ModuleCore\XCode\Attributes\TextAttribute.cs" />
+    <Compile Include="ModuleCore\XCode\Configuration\AppConfig.cs" />
+    <Compile Include="ModuleCore\XCode\Configuration\Config.cs" />
+    <Compile Include="ModuleCore\XCode\Configuration\FieldItem.cs" />
+    <Compile Include="ModuleCore\XCode\Configuration\xCalendar.cs" />
+    <Compile Include="ModuleCore\XCode\Configuration\xUserTime.cs" />
+    <Compile Include="ModuleCore\XCode\DataAccessLayer\Access.cs" />
+    <Compile Include="ModuleCore\XCode\DataAccessLayer\DAL.cs" />
+    <Compile Include="ModuleCore\XCode\DataAccessLayer\DataBase.cs" />
+    <Compile Include="ModuleCore\XCode\DataAccessLayer\IDataBase.cs" />
+    <Compile Include="ModuleCore\XCode\DataAccessLayer\MySql.cs" />
+    <Compile Include="ModuleCore\XCode\DataAccessLayer\SqlBuilder.cs" />
+    <Compile Include="ModuleCore\XCode\DataAccessLayer\SQLite.cs" />
+    <Compile Include="ModuleCore\XCode\DataAccessLayer\SqlServer.cs" />
+    <Compile Include="ModuleCore\XCode\DataAccessLayer\SqlServer2005.cs" />
+    <Compile Include="ModuleCore\XCode\DataAccessLayer\XField.cs" />
+    <Compile Include="ModuleCore\XCode\DataAccessLayer\XTable.cs" />
+    <Compile Include="ModuleCore\XCode\DataCache\CacheItem.cs" />
+    <Compile Include="ModuleCore\XCode\DataCache\SqlCache.cs" />
+    <Compile Include="ModuleCore\XCode\DataCache\XCache.cs" />
+    <Compile Include="ModuleCore\XCode\Entity\DatabaseSchema.cs" />
+    <Compile Include="ModuleCore\XCode\Entity\DirtyCollection.cs" />
+    <Compile Include="ModuleCore\XCode\Entity\Entity.cs" />
+    <Compile Include="ModuleCore\XCode\Entity\EntityCache.cs" />
+    <Compile Include="ModuleCore\XCode\xLog\IWriteLog.cs" />
+    <Compile Include="ModuleCore\XCode\xLog\Trace.cs" />
+    <Compile Include="ModuleCore\XCode\xLog\WriteLogEventArgs.cs" />
+    <Compile Include="ModuleCore\XCode\xLog\XException.cs" />
+    <Compile Include="ModuleCore\XCode\xLog\XTrace.cs" />
+    <Compile Include="ModuleCore\XCode\Search\QueryParam.cs" />
+    <Compile Include="ModuleCore\XmlEntities\EffectDBEntity.cs" />
+    <Compile Include="ModuleCore\XmlEntities\EffectSettingEntity.cs" />
+    <Compile Include="ModuleCore\Xml\XmlFormat.cs" />
+    <Compile Include="ModuleCore\Xml\XmlEntityAttributes.cs" />
+    <Compile Include="Index_Manager.aspx.cs">
+      <DependentUpon>Index_Manager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index_Manager.aspx.designer.cs">
+      <DependentUpon>Index_Manager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager_ErrorCatch.ascx.cs">
+      <DependentUpon>Manager_ErrorCatch.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager_ErrorCatch.ascx.designer.cs">
+      <DependentUpon>Manager_ErrorCatch.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource_DropzoneUpload.ascx.cs">
+      <DependentUpon>Resource_DropzoneUpload.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Resource_DropzoneUpload.ascx.designer.cs">
+      <DependentUpon>Resource_DropzoneUpload.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource_FeaturedImage.ascx.cs">
+      <DependentUpon>Resource_FeaturedImage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Resource_FeaturedImage.ascx.designer.cs">
+      <DependentUpon>Resource_FeaturedImage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource_FeaturedImage.aspx.cs">
+      <DependentUpon>Resource_FeaturedImage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Resource_FeaturedImage.aspx.designer.cs">
+      <DependentUpon>Resource_FeaturedImage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource_FilesStatus.ashx.cs" />
+    <Compile Include="Resource_Item.ascx.cs">
+      <DependentUpon>Resource_Item.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Resource_Item.ascx.designer.cs">
+      <DependentUpon>Resource_Item.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource_Item.aspx.cs">
+      <DependentUpon>Resource_Item.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Resource_Item.aspx.designer.cs">
+      <DependentUpon>Resource_Item.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource_jQueryFileUpload.ashx.cs">
+      <DependentUpon>Resource_jQueryFileUpload.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource_jQueryFileUpload.aspx.cs">
+      <DependentUpon>Resource_jQueryFileUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Resource_jQueryFileUpload.aspx.designer.cs">
+      <DependentUpon>Resource_jQueryFileUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource_SelectIcons.ascx.cs">
+      <DependentUpon>Resource_SelectIcons.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Resource_SelectIcons.ascx.designer.cs">
+      <DependentUpon>Resource_SelectIcons.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Setting_Library.ascx.cs">
+      <DependentUpon>Setting_Library.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Setting_Library.ascx.designer.cs">
+      <DependentUpon>Setting_Library.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Setting_jQuery.ascx.cs">
+      <DependentUpon>Setting_jQuery.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Setting_jQuery.ascx.designer.cs">
+      <DependentUpon>Setting_jQuery.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resource_Service.aspx.cs">
+      <DependentUpon>Resource_Service.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Resource_Service.aspx.designer.cs">
+      <DependentUpon>Resource_Service.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.ascx.cs">
+      <DependentUpon>Settings.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Settings.ascx.designer.cs">
+      <DependentUpon>Settings.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings_Empty.ascx.cs">
+      <DependentUpon>Settings_Empty.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Settings_Empty.ascx.designer.cs">
+      <DependentUpon>Settings_Empty.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Setting_Effects.ascx.cs">
+      <DependentUpon>Setting_Effects.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Setting_Effects.ascx.designer.cs">
+      <DependentUpon>Setting_Effects.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Setting_Effect_Style.ascx.cs">
+      <DependentUpon>Setting_Effect_Style.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Setting_Effect_Style.ascx.designer.cs">
+      <DependentUpon>Setting_Effect_Style.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Setting_Library_Synchronize.ascx.cs">
+      <DependentUpon>Setting_Library_Synchronize.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Setting_Library_Synchronize.ascx.designer.cs">
+      <DependentUpon>Setting_Library_Synchronize.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Setting_ManagerGroup.ascx.cs">
+      <DependentUpon>Setting_ManagerGroup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Setting_ManagerGroup.ascx.designer.cs">
+      <DependentUpon>Setting_ManagerGroup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Setting_ManagerImportExport.ascx.cs">
+      <DependentUpon>Setting_ManagerImportExport.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Setting_ManagerImportExport.ascx.designer.cs">
+      <DependentUpon>Setting_ManagerImportExport.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Setting_ManagerItem.ascx.cs">
+      <DependentUpon>Setting_ManagerItem.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Setting_ManagerItem.ascx.designer.cs">
+      <DependentUpon>Setting_ManagerItem.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Setting_ManagerLists.ascx.cs">
+      <DependentUpon>Setting_ManagerLists.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Setting_ManagerLists.ascx.designer.cs">
+      <DependentUpon>Setting_ManagerLists.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Setting_ManagerOptions.ascx.cs">
+      <DependentUpon>Setting_ManagerOptions.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Setting_ManagerOptions.ascx.designer.cs">
+      <DependentUpon>Setting_ManagerOptions.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="View_Index.ascx.cs">
+      <DependentUpon>View_Index.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View_Index.ascx.designer.cs">
+      <DependentUpon>View_Index.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="View_List.ascx.cs">
+      <DependentUpon>View_List.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View_List.ascx.designer.cs">
+      <DependentUpon>View_List.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="View_Info.ascx.cs">
+      <DependentUpon>View_Info.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View_Info.ascx.designer.cs">
+      <DependentUpon>View_Info.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dll_Storage\CNVelocity.dll" />
+    <Content Include="dll_Storage\CNVelocity.xml" />
+    <Content Include="Effects\Effect_25_CookieNotice\Effect.html" />
+    <Content Include="Effects\Effect_25_CookieNotice\EffectDB.xml" />
+    <Content Include="Effects\Effect_25_CookieNotice\EffectSetting.xml" />
+    <Content Include="Effects\Effect_25_CookieNotice\images\content_bottom_push_in_2.jpg" />
+    <Content Include="Effects\Effect_25_CookieNotice\images\content_zoom.jpg" />
+    <Content Include="Effects\Effect_25_CookieNotice\images\ico_LeftAndRight_enter.jpg" />
+    <Content Include="Effects\Effect_25_CookieNotice\images\img_flip.jpg" />
+    <Content Include="Effects\Effect_25_CookieNotice\js\cookie-popup.js" />
+    <Content Include="Effects\Effect_25_CookieNotice\js\format.js" />
+    <Content Include="Effects\Effect_25_CookieNotice\js\history-ajax.js" />
+    <Content Include="Effects\Effect_25_CookieNotice\js\moment.min.js" />
+    <Content Include="Effects\Effect_25_CookieNotice\js\responsivetab.min.js" />
+    <Content Include="Effects\Effect_25_CookieNotice\js\slick.min.js" />
+    <Content Include="Effects\Effect_25_CookieNotice\preview.jpg" />
+    <Content Include="Effects\Effect_25_CookieNotice\Themes\Theme_Default\image.jpg" />
+    <Content Include="Effects\Effect_25_CookieNotice\Themes\Theme_Default\Style.css" />
+    <Content Include="Effects\Effect_01_SlideShow_H\Effect.html" />
+    <Content Include="Effects\Effect_01_SlideShow_H\EffectDB.xml" />
+    <Content Include="Effects\Effect_01_SlideShow_H\EffectSetting.xml" />
+    <Content Include="Effects\Effect_01_SlideShow_H\images\grab.png" />
+    <Content Include="Effects\Effect_01_SlideShow_H\images\ta01.jpg" />
+    <Content Include="Effects\Effect_01_SlideShow_H\images\ta02.jpg" />
+    <Content Include="Effects\Effect_01_SlideShow_H\images\ta03.jpg" />
+    <Content Include="Effects\Effect_01_SlideShow_H\images\ta04.jpg" />
+    <Content Include="Effects\Effect_01_SlideShow_H\images\ta05.jpg" />
+    <Content Include="Effects\Effect_01_SlideShow_H\images\ta06.jpg" />
+    <Content Include="Effects\Effect_01_SlideShow_H\images\ta07.jpg" />
+    <Content Include="Effects\Effect_01_SlideShow_H\images\ta09.jpg" />
+    <Content Include="Effects\Effect_01_SlideShow_H\images\ta10.jpg" />
+    <Content Include="Effects\Effect_01_SlideShow_H\images\ta11.jpg" />
+    <Content Include="Effects\Effect_01_SlideShow_H\images\ta12.jpg" />
+    <Content Include="Effects\Effect_01_SlideShow_H\images\ta13.jpg" />
+    <Content Include="Effects\Effect_01_SlideShow_H\images\ta14.jpg" />
+    <Content Include="Effects\Effect_01_SlideShow_H\images\ta15.jpg" />
+    <Content Include="Effects\Effect_01_SlideShow_H\images\ta16.jpg" />
+    <Content Include="Effects\Effect_01_SlideShow_H\images\ta17.jpg" />
+    <Content Include="Effects\Effect_01_SlideShow_H\images\ta18.jpg" />
+    <Content Include="Effects\Effect_01_SlideShow_H\images\ta19.jpg" />
+    <Content Include="Effects\Effect_01_SlideShow_H\images\ta20.jpg" />
+    <Content Include="Effects\Effect_01_SlideShow_H\images\ta21.jpg" />
+    <Content Include="Effects\Effect_01_SlideShow_H\images\ta22.jpg" />
+    <Content Include="Effects\Effect_01_SlideShow_H\images\tb01.jpg" />
+    <Content Include="Effects\Effect_01_SlideShow_H\images\tb02.jpg" />
+    <Content Include="Effects\Effect_01_SlideShow_H\images\tb03.jpg" />
+    <Content Include="Effects\Effect_01_SlideShow_H\images\tb04.jpg" />
+    <Content Include="Effects\Effect_01_SlideShow_H\images\tb05.jpg" />
+    <Content Include="Effects\Effect_01_SlideShow_H\images\tb06.jpg" />
+    <Content Include="Effects\Effect_01_SlideShow_H\images\tb07.jpg" />
+    <Content Include="Effects\Effect_01_SlideShow_H\images\tb08.jpg" />
+    <Content Include="Effects\Effect_01_SlideShow_H\images\tb09.jpg" />
+    <Content Include="Effects\Effect_01_SlideShow_H\images\tb10.jpg" />
+    <Content Include="Effects\Effect_01_SlideShow_H\images\tb11.jpg" />
+    <Content Include="Effects\Effect_01_SlideShow_H\images\tb12.jpg" />
+    <Content Include="Effects\Effect_01_SlideShow_H\images\tb13.jpg" />
+    <Content Include="Effects\Effect_01_SlideShow_H\images\tb14.jpg" />
+    <Content Include="Effects\Effect_01_SlideShow_H\images\tb15.jpg" />
+    <Content Include="Effects\Effect_01_SlideShow_H\images\tb16.jpg" />
+    <Content Include="Effects\Effect_01_SlideShow_H\images\tb17.jpg" />
+    <Content Include="Effects\Effect_01_SlideShow_H\images\tmb1.jpg" />
+    <Content Include="Effects\Effect_01_SlideShow_H\images\tmb2.jpg" />
+    <Content Include="Effects\Effect_01_SlideShow_H\js\jssor.js" />
+    <Content Include="Effects\Effect_01_SlideShow_H\js\jssor.player.ytiframe.min.js" />
+    <Content Include="Effects\Effect_01_SlideShow_H\js\jssor.slider.js" />
+    <Content Include="Effects\Effect_01_SlideShow_H\js\jssor.transitions.js" />
+    <Content Include="Effects\Effect_01_SlideShow_H\SliderSetting.xml" />
+    <Content Include="Effects\Effect_01_SlideShow_H\Themes\Theme_01_Default\image.jpg" />
+    <Content Include="Effects\Effect_01_SlideShow_H\Themes\Theme_01_Default\images\a01.png" />
+    <Content Include="Effects\Effect_01_SlideShow_H\Themes\Theme_01_Default\images\a02.png" />
+    <Content Include="Effects\Effect_01_SlideShow_H\Themes\Theme_01_Default\images\a03.png" />
+    <Content Include="Effects\Effect_01_SlideShow_H\Themes\Theme_01_Default\images\a04.png" />
+    <Content Include="Effects\Effect_01_SlideShow_H\Themes\Theme_01_Default\images\a06.png" />
+    <Content Include="Effects\Effect_01_SlideShow_H\Themes\Theme_01_Default\images\a07.png" />
+    <Content Include="Effects\Effect_01_SlideShow_H\Themes\Theme_01_Default\images\a08.png" />
+    <Content Include="Effects\Effect_01_SlideShow_H\Themes\Theme_01_Default\images\a09.png" />
+    <Content Include="Effects\Effect_01_SlideShow_H\Themes\Theme_01_Default\images\a10.png" />
+    <Content Include="Effects\Effect_01_SlideShow_H\Themes\Theme_01_Default\images\a11.png" />
+    <Content Include="Effects\Effect_01_SlideShow_H\Themes\Theme_01_Default\images\a12.png" />
+    <Content Include="Effects\Effect_01_SlideShow_H\Themes\Theme_01_Default\images\a13.png" />
+    <Content Include="Effects\Effect_01_SlideShow_H\Themes\Theme_01_Default\images\a14.png" />
+    <Content Include="Effects\Effect_01_SlideShow_H\Themes\Theme_01_Default\images\a15.png" />
+    <Content Include="Effects\Effect_01_SlideShow_H\Themes\Theme_01_Default\images\a16.png" />
+    <Content Include="Effects\Effect_01_SlideShow_H\Themes\Theme_01_Default\images\a17.png" />
+    <Content Include="Effects\Effect_01_SlideShow_H\Themes\Theme_01_Default\images\a18.png" />
+    <Content Include="Effects\Effect_01_SlideShow_H\Themes\Theme_01_Default\images\a19.png" />
+    <Content Include="Effects\Effect_01_SlideShow_H\Themes\Theme_01_Default\images\a20.png" />
+    <Content Include="Effects\Effect_01_SlideShow_H\Themes\Theme_01_Default\images\a21.png" />
+    <Content Include="Effects\Effect_01_SlideShow_H\Themes\Theme_01_Default\images\a22.png" />
+    <Content Include="Effects\Effect_01_SlideShow_H\Themes\Theme_01_Default\images\b02.png" />
+    <Content Include="Effects\Effect_01_SlideShow_H\Themes\Theme_01_Default\images\b03.png" />
+    <Content Include="Effects\Effect_01_SlideShow_H\Themes\Theme_01_Default\images\b04.png" />
+    <Content Include="Effects\Effect_01_SlideShow_H\Themes\Theme_01_Default\images\b05.png" />
+    <Content Include="Effects\Effect_01_SlideShow_H\Themes\Theme_01_Default\images\b06.png" />
+    <Content Include="Effects\Effect_01_SlideShow_H\Themes\Theme_01_Default\images\b07.png" />
+    <Content Include="Effects\Effect_01_SlideShow_H\Themes\Theme_01_Default\images\b08.png" />
+    <Content Include="Effects\Effect_01_SlideShow_H\Themes\Theme_01_Default\images\b10.png" />
+    <Content Include="Effects\Effect_01_SlideShow_H\Themes\Theme_01_Default\images\b11.png" />
+    <Content Include="Effects\Effect_01_SlideShow_H\Themes\Theme_01_Default\images\b12.png" />
+    <Content Include="Effects\Effect_01_SlideShow_H\Themes\Theme_01_Default\images\b13.png" />
+    <Content Include="Effects\Effect_01_SlideShow_H\Themes\Theme_01_Default\images\b14.png" />
+    <Content Include="Effects\Effect_01_SlideShow_H\Themes\Theme_01_Default\images\b15.png" />
+    <Content Include="Effects\Effect_01_SlideShow_H\Themes\Theme_01_Default\images\b16.png" />
+    <Content Include="Effects\Effect_01_SlideShow_H\Themes\Theme_01_Default\images\b17.png" />
+    <Content Include="Effects\Effect_01_SlideShow_H\Themes\Theme_01_Default\images\close.png" />
+    <Content Include="Effects\Effect_01_SlideShow_H\Themes\Theme_01_Default\images\grab.png" />
+    <Content Include="Effects\Effect_01_SlideShow_H\Themes\Theme_01_Default\images\loading.gif" />
+    <Content Include="Effects\Effect_01_SlideShow_H\Themes\Theme_01_Default\images\loading2.gif" />
+    <Content Include="Effects\Effect_01_SlideShow_H\Themes\Theme_01_Default\images\play.png" />
+    <Content Include="Effects\Effect_01_SlideShow_H\Themes\Theme_01_Default\images\t01.png" />
+    <Content Include="Effects\Effect_01_SlideShow_H\Themes\Theme_01_Default\Style.css" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Effect.html" />
+    <Content Include="Effects\Effect_02_SlideShow_V\EffectDB.xml" />
+    <Content Include="Effects\Effect_02_SlideShow_V\EffectSetting.xml" />
+    <Content Include="Effects\Effect_02_SlideShow_V\images\ta01.jpg" />
+    <Content Include="Effects\Effect_02_SlideShow_V\images\ta02.jpg" />
+    <Content Include="Effects\Effect_02_SlideShow_V\images\ta03.jpg" />
+    <Content Include="Effects\Effect_02_SlideShow_V\images\ta04.jpg" />
+    <Content Include="Effects\Effect_02_SlideShow_V\images\ta05.jpg" />
+    <Content Include="Effects\Effect_02_SlideShow_V\images\ta06.jpg" />
+    <Content Include="Effects\Effect_02_SlideShow_V\images\ta07.jpg" />
+    <Content Include="Effects\Effect_02_SlideShow_V\images\ta09.jpg" />
+    <Content Include="Effects\Effect_02_SlideShow_V\images\ta10.jpg" />
+    <Content Include="Effects\Effect_02_SlideShow_V\images\ta11.jpg" />
+    <Content Include="Effects\Effect_02_SlideShow_V\images\ta12.jpg" />
+    <Content Include="Effects\Effect_02_SlideShow_V\images\ta13.jpg" />
+    <Content Include="Effects\Effect_02_SlideShow_V\images\ta14.jpg" />
+    <Content Include="Effects\Effect_02_SlideShow_V\images\ta15.jpg" />
+    <Content Include="Effects\Effect_02_SlideShow_V\images\ta16.jpg" />
+    <Content Include="Effects\Effect_02_SlideShow_V\images\ta17.jpg" />
+    <Content Include="Effects\Effect_02_SlideShow_V\images\ta18.jpg" />
+    <Content Include="Effects\Effect_02_SlideShow_V\images\ta19.jpg" />
+    <Content Include="Effects\Effect_02_SlideShow_V\images\ta20.jpg" />
+    <Content Include="Effects\Effect_02_SlideShow_V\images\ta21.jpg" />
+    <Content Include="Effects\Effect_02_SlideShow_V\images\ta22.jpg" />
+    <Content Include="Effects\Effect_02_SlideShow_V\images\tb01.jpg" />
+    <Content Include="Effects\Effect_02_SlideShow_V\images\tb02.jpg" />
+    <Content Include="Effects\Effect_02_SlideShow_V\images\tb03.jpg" />
+    <Content Include="Effects\Effect_02_SlideShow_V\images\tb04.jpg" />
+    <Content Include="Effects\Effect_02_SlideShow_V\images\tb05.jpg" />
+    <Content Include="Effects\Effect_02_SlideShow_V\images\tb06.jpg" />
+    <Content Include="Effects\Effect_02_SlideShow_V\images\tb07.jpg" />
+    <Content Include="Effects\Effect_02_SlideShow_V\images\tb08.jpg" />
+    <Content Include="Effects\Effect_02_SlideShow_V\images\tb09.jpg" />
+    <Content Include="Effects\Effect_02_SlideShow_V\images\tb10.jpg" />
+    <Content Include="Effects\Effect_02_SlideShow_V\images\tb11.jpg" />
+    <Content Include="Effects\Effect_02_SlideShow_V\images\tb12.jpg" />
+    <Content Include="Effects\Effect_02_SlideShow_V\images\tb13.jpg" />
+    <Content Include="Effects\Effect_02_SlideShow_V\images\tb14.jpg" />
+    <Content Include="Effects\Effect_02_SlideShow_V\images\tb15.jpg" />
+    <Content Include="Effects\Effect_02_SlideShow_V\images\tb16.jpg" />
+    <Content Include="Effects\Effect_02_SlideShow_V\images\tb17.jpg" />
+    <Content Include="Effects\Effect_02_SlideShow_V\images\tmb1.jpg" />
+    <Content Include="Effects\Effect_02_SlideShow_V\images\tmb2.jpg" />
+    <Content Include="Effects\Effect_02_SlideShow_V\images\tmb3.jpg" />
+    <Content Include="Effects\Effect_02_SlideShow_V\js\jssor.js" />
+    <Content Include="Effects\Effect_02_SlideShow_V\js\jssor.player.ytiframe.min.js" />
+    <Content Include="Effects\Effect_02_SlideShow_V\js\jssor.slider.js" />
+    <Content Include="Effects\Effect_02_SlideShow_V\js\jssor.transitions.js" />
+    <Content Include="Effects\Effect_02_SlideShow_V\SliderSetting.xml" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Themes\Theme_02_Default\image.jpg" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Themes\Theme_02_Default\images\a01.png" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Themes\Theme_02_Default\images\a02.png" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Themes\Theme_02_Default\images\a03.png" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Themes\Theme_02_Default\images\a04.png" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Themes\Theme_02_Default\images\a06.png" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Themes\Theme_02_Default\images\a07.png" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Themes\Theme_02_Default\images\a08.png" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Themes\Theme_02_Default\images\a09.png" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Themes\Theme_02_Default\images\a10.png" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Themes\Theme_02_Default\images\a11.png" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Themes\Theme_02_Default\images\a12.png" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Themes\Theme_02_Default\images\a13.png" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Themes\Theme_02_Default\images\a14.png" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Themes\Theme_02_Default\images\a15.png" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Themes\Theme_02_Default\images\a16.png" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Themes\Theme_02_Default\images\a17.png" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Themes\Theme_02_Default\images\a18.png" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Themes\Theme_02_Default\images\a19.png" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Themes\Theme_02_Default\images\a20.png" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Themes\Theme_02_Default\images\a21.png" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Themes\Theme_02_Default\images\a22.png" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Themes\Theme_02_Default\images\b01.png" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Themes\Theme_02_Default\images\b02.png" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Themes\Theme_02_Default\images\b03.png" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Themes\Theme_02_Default\images\b04.png" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Themes\Theme_02_Default\images\b05.png" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Themes\Theme_02_Default\images\b06.png" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Themes\Theme_02_Default\images\b07.png" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Themes\Theme_02_Default\images\b08.png" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Themes\Theme_02_Default\images\b09.png" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Themes\Theme_02_Default\images\b10.png" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Themes\Theme_02_Default\images\b11.png" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Themes\Theme_02_Default\images\b12.png" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Themes\Theme_02_Default\images\b13.png" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Themes\Theme_02_Default\images\b14.png" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Themes\Theme_02_Default\images\b15.png" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Themes\Theme_02_Default\images\b16.png" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Themes\Theme_02_Default\images\b17.png" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Themes\Theme_02_Default\images\close.png" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Themes\Theme_02_Default\images\grab.png" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Themes\Theme_02_Default\images\loading.gif" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Themes\Theme_02_Default\images\loading2.gif" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Themes\Theme_02_Default\images\play.png" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Themes\Theme_02_Default\images\t01.png" />
+    <Content Include="Effects\Effect_02_SlideShow_V\Themes\Theme_02_Default\Style.css" />
+    <Content Include="Effects\Effect_03_Carousel\Effect.html" />
+    <Content Include="Effects\Effect_03_Carousel\EffectDB.xml" />
+    <Content Include="Effects\Effect_03_Carousel\EffectSetting.xml" />
+    <Content Include="Effects\Effect_03_Carousel\images\content_bottom_push_in_2.jpg" />
+    <Content Include="Effects\Effect_03_Carousel\images\content_zoom.jpg" />
+    <Content Include="Effects\Effect_03_Carousel\images\ico_LeftAndRight_enter.jpg" />
+    <Content Include="Effects\Effect_03_Carousel\images\img_flip.jpg" />
+    <Content Include="Effects\Effect_03_Carousel\js\slick.js" />
+    <Content Include="Effects\Effect_03_Carousel\js\slick.min.js" />
+    <Content Include="Effects\Effect_03_Carousel\SliderSetting.xml" />
+    <Content Include="Effects\Effect_03_Carousel\Themes\Theme_03_Default\image.jpg" />
+    <Content Include="Effects\Effect_03_Carousel\Themes\Theme_03_Default\images\ajax-loader.gif" />
+    <Content Include="Effects\Effect_03_Carousel\Themes\Theme_03_Default\images\loading.gif" />
+    <Content Include="Effects\Effect_03_Carousel\Themes\Theme_03_Default\Style.css" />
+    <Content Include="Effects\Effect_04_Isotope\Effect.html" />
+    <Content Include="Effects\Effect_04_Isotope\EffectDB.xml" />
+    <Content Include="Effects\Effect_04_Isotope\EffectSetting.xml" />
+    <Content Include="Effects\Effect_04_Isotope\images\content_bottom_push_in_2.jpg" />
+    <Content Include="Effects\Effect_04_Isotope\images\content_zoom.jpg" />
+    <Content Include="Effects\Effect_04_Isotope\images\ico_LeftAndRight_enter.jpg" />
+    <Content Include="Effects\Effect_04_Isotope\images\img_flip.jpg" />
+    <Content Include="Effects\Effect_04_Isotope\js\masonry.min.js" />
+    <Content Include="Effects\Effect_04_Isotope\SliderSetting.xml" />
+    <Content Include="Effects\Effect_04_Isotope\Themes\Theme_04_Default\image.jpg" />
+    <Content Include="Effects\Effect_04_Isotope\Themes\Theme_04_Default\Style.css" />
+    <Content Include="Effects\Effect_05_ResponsiveTabs\Effect.html" />
+    <Content Include="Effects\Effect_05_ResponsiveTabs\EffectDB.xml" />
+    <Content Include="Effects\Effect_05_ResponsiveTabs\EffectSetting.xml" />
+    <Content Include="Effects\Effect_05_ResponsiveTabs\images\Bottom.png" />
+    <Content Include="Effects\Effect_05_ResponsiveTabs\images\left.png" />
+    <Content Include="Effects\Effect_05_ResponsiveTabs\images\Right.png" />
+    <Content Include="Effects\Effect_05_ResponsiveTabs\images\top.png" />
+    <Content Include="Effects\Effect_05_ResponsiveTabs\js\responsivetab.min.js" />
+    <Content Include="Effects\Effect_05_ResponsiveTabs\SliderSetting.xml" />
+    <Content Include="Effects\Effect_05_ResponsiveTabs\Themes\Theme_05_Default\image.jpg" />
+    <Content Include="Effects\Effect_05_ResponsiveTabs\Themes\Theme_05_Default\Style.css" />
+    <Content Include="Effects\Effect_06_Accordion\Effect.html" />
+    <Content Include="Effects\Effect_06_Accordion\EffectDB.xml" />
+    <Content Include="Effects\Effect_06_Accordion\EffectSetting.xml" />
+    <Content Include="Effects\Effect_06_Accordion\js\jquery-accordion.js" />
+    <Content Include="Effects\Effect_06_Accordion\SliderSetting.xml" />
+    <Content Include="Effects\Effect_06_Accordion\Themes\Theme_06_Default\image.jpg" />
+    <Content Include="Effects\Effect_06_Accordion\Themes\Theme_06_Default\Style.css" />
+    <Content Include="Effects\Effect_07_FlipBox\Effect.html" />
+    <Content Include="Effects\Effect_07_FlipBox\EffectDB.xml" />
+    <Content Include="Effects\Effect_07_FlipBox\EffectSetting.xml" />
+    <Content Include="Effects\Effect_07_FlipBox\SliderSetting.xml" />
+    <Content Include="Effects\Effect_07_FlipBox\Themes\Theme_07_Default\image.jpg" />
+    <Content Include="Effects\Effect_07_FlipBox\Themes\Theme_07_Default\Style.css" />
+    <Content Include="Effects\Effect_08_PhotoGallery\Effect.html" />
+    <Content Include="Effects\Effect_08_PhotoGallery\EffectDB.xml" />
+    <Content Include="Effects\Effect_08_PhotoGallery\EffectSetting.xml" />
+    <Content Include="Effects\Effect_08_PhotoGallery\images\content_bottom_push_in_2.jpg" />
+    <Content Include="Effects\Effect_08_PhotoGallery\images\content_zoom.jpg" />
+    <Content Include="Effects\Effect_08_PhotoGallery\images\ico_LeftAndRight_enter.jpg" />
+    <Content Include="Effects\Effect_08_PhotoGallery\images\img_flip.jpg" />
+    <Content Include="Effects\Effect_08_PhotoGallery\SliderSetting.xml" />
+    <Content Include="Effects\Effect_08_PhotoGallery\Themes\Theme_08_Default\image.jpg" />
+    <Content Include="Effects\Effect_08_PhotoGallery\Themes\Theme_08_Default\Style.css" />
+    <Content Include="Effects\Effect_09_ResponsiveSlide\Effect.html" />
+    <Content Include="Effects\Effect_09_ResponsiveSlide\EffectDB.xml" />
+    <Content Include="Effects\Effect_09_ResponsiveSlide\EffectSetting.xml" />
+    <Content Include="Effects\Effect_09_ResponsiveSlide\js\Testimonialstab.js" />
+    <Content Include="Effects\Effect_09_ResponsiveSlide\SliderSetting.xml" />
+    <Content Include="Effects\Effect_09_ResponsiveSlide\Themes\Theme_09_Default\image.jpg" />
+    <Content Include="Effects\Effect_09_ResponsiveSlide\Themes\Theme_09_Default\Style.css" />
+    <Content Include="Effects\Effect_11_TransBanner\Effect.html" />
+    <Content Include="Effects\Effect_11_TransBanner\EffectDB.xml" />
+    <Content Include="Effects\Effect_11_TransBanner\EffectSetting.xml" />
+    <Content Include="Effects\Effect_11_TransBanner\js\trans-banner.min.js" />
+    <Content Include="Effects\Effect_11_TransBanner\SliderSetting.xml" />
+    <Content Include="Effects\Effect_11_TransBanner\Themes\Theme_11_Default\image.jpg" />
+    <Content Include="Effects\Effect_11_TransBanner\Themes\Theme_11_Default\images\icons.png" />
+    <Content Include="Effects\Effect_11_TransBanner\Themes\Theme_11_Default\images\preloader.gif" />
+    <Content Include="Effects\Effect_11_TransBanner\Themes\Theme_11_Default\images\timer-sprite.png" />
+    <Content Include="Effects\Effect_11_TransBanner\Themes\Theme_11_Default\Style.css" />
+    <Content Include="Effects\Effect_12_UnoSlider\css\unoslider.css" />
+    <Content Include="Effects\Effect_12_UnoSlider\Effect.html" />
+    <Content Include="Effects\Effect_12_UnoSlider\EffectDB.xml" />
+    <Content Include="Effects\Effect_12_UnoSlider\EffectSetting.xml" />
+    <Content Include="Effects\Effect_12_UnoSlider\js\unoslider.dev.js" />
+    <Content Include="Effects\Effect_12_UnoSlider\js\unoslider.js" />
+    <Content Include="Effects\Effect_12_UnoSlider\SliderSetting.xml" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Basic\basic.png" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Basic\image.jpg" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Basic\style.css" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Elegant\elegant.png" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Elegant\image.jpg" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Elegant\style.css" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Inline\image.jpg" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Inline\inline.png" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Inline\style.css" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Light\image.jpg" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Light\light.png" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Light\style.css" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Minimalist\image.jpg" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Minimalist\minimalist.png" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Minimalist\style.css" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Modern\image.jpg" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Modern\modern.png" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Modern\style.css" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Panel\image.jpg" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Panel\panel.png" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Panel\style.css" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Ribbon\image.jpg" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Ribbon\ribbon.png" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Ribbon\style.css" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Slick\image.jpg" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Slick\slick.png" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Slick\style.css" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Smooth\image.jpg" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Smooth\smooth.png" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Smooth\style.css" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Square\image.jpg" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Square\square.png" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Square\style.css" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Text\image.jpg" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Text\style.css" />
+    <Content Include="Effects\Effect_13_Scrolling\Effect.html" />
+    <Content Include="Effects\Effect_13_Scrolling\EffectDB.xml" />
+    <Content Include="Effects\Effect_13_Scrolling\EffectSetting.xml" />
+    <Content Include="Effects\Effect_13_Scrolling\images\content_bottom_push_in_2.jpg" />
+    <Content Include="Effects\Effect_13_Scrolling\images\content_zoom.jpg" />
+    <Content Include="Effects\Effect_13_Scrolling\images\ico_LeftAndRight_enter.jpg" />
+    <Content Include="Effects\Effect_13_Scrolling\images\img_flip.jpg" />
+    <Content Include="Effects\Effect_13_Scrolling\js\jssor.js" />
+    <Content Include="Effects\Effect_13_Scrolling\js\jssor.player.ytiframe.min.js" />
+    <Content Include="Effects\Effect_13_Scrolling\js\jssor.slider.js" />
+    <Content Include="Effects\Effect_13_Scrolling\js\jssor.transitions.js" />
+    <Content Include="Effects\Effect_13_Scrolling\SliderSetting.xml" />
+    <Content Include="Effects\Effect_13_Scrolling\Themes\Theme_13_Default\image.jpg" />
+    <Content Include="Effects\Effect_13_Scrolling\Themes\Theme_13_Default\images\loading.gif" />
+    <Content Include="Effects\Effect_13_Scrolling\Themes\Theme_13_Default\Style.css" />
+    <Content Include="Effects\Effect_14_FAQ\Effect.html" />
+    <Content Include="Effects\Effect_14_FAQ\EffectDB.xml" />
+    <Content Include="Effects\Effect_14_FAQ\CategorySetting.xml" />
+    <Content Include="Effects\Effect_14_FAQ\EffectSetting.xml" />
+    <Content Include="Effects\Effect_14_FAQ\js\jquery-accordion.js" />
+    <Content Include="Effects\Effect_14_FAQ\SliderSetting.xml" />
+    <Content Include="Effects\Effect_14_FAQ\Themes\Theme_14_Default\image.jpg" />
+    <Content Include="Effects\Effect_14_FAQ\Themes\Theme_14_Default\Style.css" />
+    <Content Include="Effects\Effect_15_ContentSlider\Effect.html" />
+    <Content Include="Effects\Effect_15_ContentSlider\EffectDB.xml" />
+    <Content Include="Effects\Effect_15_ContentSlider\EffectSetting.xml" />
+    <Content Include="Effects\Effect_15_ContentSlider\images\left2.png" />
+    <Content Include="Effects\Effect_15_ContentSlider\images\left_vertical.png" />
+    <Content Include="Effects\Effect_15_ContentSlider\images\left_vertical2.png" />
+    <Content Include="Effects\Effect_15_ContentSlider\images\more.png" />
+    <Content Include="Effects\Effect_15_ContentSlider\images\right2.png" />
+    <Content Include="Effects\Effect_15_ContentSlider\images\right_vertical.png" />
+    <Content Include="Effects\Effect_15_ContentSlider\images\right_vertical2.png" />
+    <Content Include="Effects\Effect_15_ContentSlider\js\jquery.content_slider.min.js" />
+    <Content Include="Effects\Effect_15_ContentSlider\SliderSetting.xml" />
+    <Content Include="Effects\Effect_15_ContentSlider\Themes\Theme_15_Default\image.jpg" />
+    <Content Include="Effects\Effect_15_ContentSlider\Themes\Theme_15_Default\images\arr2.png" />
+    <Content Include="Effects\Effect_15_ContentSlider\Themes\Theme_15_Default\images\arrow.png" />
+    <Content Include="Effects\Effect_15_ContentSlider\Themes\Theme_15_Default\images\bg.jpg" />
+    <Content Include="Effects\Effect_15_ContentSlider\Themes\Theme_15_Default\images\bg.png" />
+    <Content Include="Effects\Effect_15_ContentSlider\Themes\Theme_15_Default\Style.css" />
+    <Content Include="Effects\Effect_16_VerticalScroll\Effect.html" />
+    <Content Include="Effects\Effect_16_VerticalScroll\EffectDB.xml" />
+    <Content Include="Effects\Effect_16_VerticalScroll\EffectSetting.xml" />
+    <Content Include="Effects\Effect_16_VerticalScroll\images\content_bottom_push_in_2.jpg" />
+    <Content Include="Effects\Effect_16_VerticalScroll\images\content_zoom.jpg" />
+    <Content Include="Effects\Effect_16_VerticalScroll\images\ico_LeftAndRight_enter.jpg" />
+    <Content Include="Effects\Effect_16_VerticalScroll\images\img_flip.jpg" />
+    <Content Include="Effects\Effect_16_VerticalScroll\js\verticalScroll.js" />
+    <Content Include="Effects\Effect_16_VerticalScroll\SliderSetting.xml" />
+    <Content Include="Effects\Effect_16_VerticalScroll\Themes\Theme_16_Default\image.jpg" />
+    <Content Include="Effects\Effect_16_VerticalScroll\Themes\Theme_16_Default\images\arr2.png" />
+    <Content Include="Effects\Effect_16_VerticalScroll\Themes\Theme_16_Default\images\arrow.png" />
+    <Content Include="Effects\Effect_16_VerticalScroll\Themes\Theme_16_Default\images\bg.jpg" />
+    <Content Include="Effects\Effect_16_VerticalScroll\Themes\Theme_16_Default\images\bg.png" />
+    <Content Include="Effects\Effect_16_VerticalScroll\Themes\Theme_16_Default\Style.css" />
+    <Content Include="Effects\Effect_17_Timeline\Effect.html" />
+    <Content Include="Effects\Effect_17_Timeline\EffectDB.xml" />
+    <Content Include="Effects\Effect_17_Timeline\EffectSetting.xml" />
+    <Content Include="Effects\Effect_17_Timeline\js\jquery.easing.1.3.js" />
+    <Content Include="Effects\Effect_17_Timeline\js\jquery.mCustomScrollbar.js" />
+    <Content Include="Effects\Effect_17_Timeline\js\jquery.timeline.min.js" />
+    <Content Include="Effects\Effect_17_Timeline\SliderSetting.xml" />
+    <Content Include="Effects\Effect_17_Timeline\Themes\Theme_17_Default\image.jpg" />
+    <Content Include="Effects\Effect_17_Timeline\Themes\Theme_17_Default\images\loadingAnimation.gif" />
+    <Content Include="Effects\Effect_17_Timeline\Themes\Theme_17_Default\Style.css" />
+    <Content Include="Effects\Effect_18_GoogleMap\Effect.html" />
+    <Content Include="Effects\Effect_18_GoogleMap\EffectDB.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Effects\Effect_18_GoogleMap\EffectSetting.xml" />
+    <Content Include="Effects\Effect_18_GoogleMap\js\jquery.gmap.min.js" />
+    <Content Include="Effects\Effect_18_GoogleMap\js\jquery.mCustomScrollbar.js" />
+    <Content Include="Effects\Effect_18_GoogleMap\js\mouseevents.js" />
+    <Content Include="Effects\Effect_18_GoogleMap\SliderSetting.xml" />
+    <Content Include="Effects\Effect_18_GoogleMap\Themes\Theme_18_Default\image.jpg" />
+    <Content Include="Effects\Effect_18_GoogleMap\Themes\Theme_18_Default\images\loading.gif" />
+    <Content Include="Effects\Effect_18_GoogleMap\Themes\Theme_18_Default\images\m1.png" />
+    <Content Include="Effects\Effect_18_GoogleMap\Themes\Theme_18_Default\images\m2.png" />
+    <Content Include="Effects\Effect_18_GoogleMap\Themes\Theme_18_Default\images\m3.png" />
+    <Content Include="Effects\Effect_18_GoogleMap\Themes\Theme_18_Default\Style.css" />
+    <Content Include="Effects\Effect_19_Chart\Effect.html" />
+    <Content Include="Effects\Effect_19_Chart\EffectDB.xml" />
+    <Content Include="Effects\Effect_19_Chart\EffectSetting.xml" />
+    <Content Include="Effects\Effect_19_Chart\images\bar.jpg" />
+    <Content Include="Effects\Effect_19_Chart\images\line.jpg" />
+    <Content Include="Effects\Effect_19_Chart\images\pie.jpg" />
+    <Content Include="Effects\Effect_19_Chart\images\Polar.jpg" />
+    <Content Include="Effects\Effect_19_Chart\images\Radar.jpg" />
+    <Content Include="Effects\Effect_19_Chart\js\Chart.min.js" />
+    <Content Include="Effects\Effect_19_Chart\SliderSetting.xml" />
+    <Content Include="Effects\Effect_19_Chart\Themes\Theme_19_Chart\image.jpg" />
+    <Content Include="Effects\Effect_19_Chart\Themes\Theme_19_Chart\Style.css" />
+    <Content Include="Effects\Effect_20_Pricing\css\Style.css" />
+    <Content Include="Effects\Effect_20_Pricing\Effect.html" />
+    <Content Include="Effects\Effect_20_Pricing\EffectDB.xml" />
+    <Content Include="Effects\Effect_20_Pricing\EffectSetting.xml" />
+    <Content Include="Effects\Effect_20_Pricing\images\content_bottom_push_in_2.jpg" />
+    <Content Include="Effects\Effect_20_Pricing\images\content_zoom.jpg" />
+    <Content Include="Effects\Effect_20_Pricing\images\ico_LeftAndRight_enter.jpg" />
+    <Content Include="Effects\Effect_20_Pricing\images\img_flip.jpg" />
+    <Content Include="Effects\Effect_20_Pricing\SliderSetting.xml" />
+    <Content Include="Effects\Effect_20_Pricing\Themes\Theme_20_Default_01\image.jpg" />
+    <Content Include="Effects\Effect_20_Pricing\Themes\Theme_20_Default_01\Style.css" />
+    <Content Include="Effects\Effect_20_Pricing\Themes\Theme_20_Default_02\image.jpg" />
+    <Content Include="Effects\Effect_20_Pricing\Themes\Theme_20_Default_02\Style.css" />
+    <Content Include="Effects\Effect_20_Pricing\Themes\Theme_20_Default_03\image.jpg" />
+    <Content Include="Effects\Effect_20_Pricing\Themes\Theme_20_Default_03\Style.css" />
+    <Content Include="Effects\Effect_20_Pricing\Themes\Theme_20_Default_04\image.jpg" />
+    <Content Include="Effects\Effect_20_Pricing\Themes\Theme_20_Default_04\Style.css" />
+    <Content Include="Effects\Effect_21_Socialsider\Effect.html" />
+    <Content Include="Effects\Effect_21_Socialsider\EffectDB.xml" />
+    <Content Include="Effects\Effect_21_Socialsider\EffectSetting.xml" />
+    <Content Include="Effects\Effect_21_Socialsider\SliderSetting.xml" />
+    <Content Include="Effects\Effect_21_Socialsider\Themes\Theme_21_Default\image.jpg" />
+    <Content Include="Effects\Effect_21_Socialsider\Themes\Theme_21_Default\Style.css" />
+    <Content Include="Effects\Effect_22_ComingSoon\css\soon.min.css" />
+    <Content Include="Effects\Effect_22_ComingSoon\Effect.html" />
+    <Content Include="Effects\Effect_22_ComingSoon\EffectDB.xml" />
+    <Content Include="Effects\Effect_22_ComingSoon\EffectSetting.xml" />
+    <Content Include="Effects\Effect_22_ComingSoon\images\fill.jpg" />
+    <Content Include="Effects\Effect_22_ComingSoon\images\flip.jpg" />
+    <Content Include="Effects\Effect_22_ComingSoon\images\matrix.jpg" />
+    <Content Include="Effects\Effect_22_ComingSoon\images\ring.jpg" />
+    <Content Include="Effects\Effect_22_ComingSoon\images\slot.jpg" />
+    <Content Include="Effects\Effect_22_ComingSoon\js\soon.min.js" />
+    <Content Include="Effects\Effect_22_ComingSoon\SliderSetting.xml" />
+    <Content Include="Effects\Effect_22_ComingSoon\Themes\Theme_22_Default\image.jpg" />
+    <Content Include="Effects\Effect_22_ComingSoon\Themes\Theme_22_Default\Style.css" />
+    <Content Include="Effects\Effect_23_ImageCarousel\Effect.html" />
+    <Content Include="Effects\Effect_23_ImageCarousel\EffectDB.xml" />
+    <Content Include="Effects\Effect_23_ImageCarousel\EffectSetting.xml" />
+    <Content Include="Effects\Effect_23_ImageCarousel\images\template_01.jpg" />
+    <Content Include="Effects\Effect_23_ImageCarousel\images\template_02.jpg" />
+    <Content Include="Effects\Effect_23_ImageCarousel\images\template_03.jpg" />
+    <Content Include="Effects\Effect_23_ImageCarousel\images\template_04.jpg" />
+    <Content Include="Effects\Effect_23_ImageCarousel\images\template_05.jpg" />
+    <Content Include="Effects\Effect_23_ImageCarousel\images\template_06.jpg" />
+    <Content Include="Effects\Effect_23_ImageCarousel\images\template_07.jpg" />
+    <Content Include="Effects\Effect_23_ImageCarousel\images\template_08.jpg" />
+    <Content Include="Effects\Effect_23_ImageCarousel\js\jquery.mCustomScrollbar.js" />
+    <Content Include="Effects\Effect_23_ImageCarousel\preview.jpg" />
+    <Content Include="Effects\Effect_23_ImageCarousel\SliderSetting.xml" />
+    <Content Include="Effects\Effect_23_ImageCarousel\Themes\Theme_23_Default\image.jpg" />
+    <Content Include="Effects\Effect_23_ImageCarousel\Themes\Theme_23_Default\images\border.png" />
+    <Content Include="Effects\Effect_23_ImageCarousel\Themes\Theme_23_Default\images\controls.png" />
+    <Content Include="Effects\Effect_23_ImageCarousel\Themes\Theme_23_Default\images\loader.gif" />
+    <Content Include="Effects\Effect_23_ImageCarousel\Themes\Theme_23_Default\images\loading.gif" />
+    <Content Include="Effects\Effect_23_ImageCarousel\Themes\Theme_23_Default\images\loading_background.png" />
+    <Content Include="Effects\Effect_23_ImageCarousel\Themes\Theme_23_Default\images\mCSB_buttons.png" />
+    <Content Include="Effects\Effect_23_ImageCarousel\Themes\Theme_23_Default\images\overlay.png" />
+    <Content Include="Effects\Effect_23_ImageCarousel\Themes\Theme_23_Default\Style.css" />
+    <Content Include="Effects\Effect_24_History\Effect.html" />
+    <Content Include="Effects\Effect_24_History\EffectDB.xml" />
+    <Content Include="Effects\Effect_24_History\EffectSetting.xml" />
+    <Content Include="Effects\Effect_24_History\images\content_bottom_push_in_2.jpg" />
+    <Content Include="Effects\Effect_24_History\images\content_zoom.jpg" />
+    <Content Include="Effects\Effect_24_History\images\ico_LeftAndRight_enter.jpg" />
+    <Content Include="Effects\Effect_24_History\images\img_flip.jpg" />
+    <Content Include="Effects\Effect_24_History\js\format.js" />
+    <Content Include="Effects\Effect_24_History\js\history-ajax.js" />
+    <Content Include="Effects\Effect_24_History\js\moment.min.js" />
+    <Content Include="Effects\Effect_24_History\js\slick.min.js" />
+    <Content Include="Effects\Effect_24_History\LayerSetting.xml" />
+    <Content Include="Effects\Effect_24_History\preview.jpg" />
+    <Content Include="Effects\Effect_24_History\SliderSetting.xml" />
+    <Content Include="Effects\Effect_24_History\Themes\Theme_24_Default\image.jpg" />
+    <Content Include="Effects\Effect_24_History\Themes\Theme_24_Default\Style.css" />
+    <Content Include="license.txt" />
+    <Content Include="ReleaseNotes.txt" />
+    <Content Include="Resource\css\font-icon.css" />
+    <Content Include="Resource\css\images.css" />
+    <Content Include="Resource\css\lightbox.css" />
+    <Content Include="Resource\fonts\fontawesome-webfont.svg" />
+    <Content Include="Resource\images\1-1.png" />
+    <Content Include="Resource\images\ajax-loader.gif" />
+    <Content Include="Resource\images\alert.png" />
+    <Content Include="Resource\images\arrow-next-icon-64.png" />
+    <Content Include="Resource\images\arrow-next-icon-ie.png" />
+    <Content Include="Resource\images\arrow-next-vertical-icon-64.png" />
+    <Content Include="Resource\images\arrow-prev-icon-64.png" />
+    <Content Include="Resource\images\arrow-prev-icon-ie.png" />
+    <Content Include="Resource\images\arrow-prev-vertical-icon-64.png" />
+    <Content Include="Resource\images\buttons.png" />
+    <Content Include="Resource\images\caption-bg.png" />
+    <Content Include="Resource\images\carousel_ico.png" />
+    <Content Include="Resource\images\crystal\audio.jpg" />
+    <Content Include="Resource\images\crystal\code.jpg" />
+    <Content Include="Resource\images\crystal\Document.jpg" />
+    <Content Include="Resource\images\crystal\img.jpg" />
+    <Content Include="Resource\images\crystal\pdf.jpg" />
+    <Content Include="Resource\images\crystal\text.jpg" />
+    <Content Include="Resource\images\crystal\Unknown type.jpg" />
+    <Content Include="Resource\images\crystal\video.jpg" />
+    <Content Include="Resource\images\crystal\zip.jpg" />
+    <Content Include="Resource\images\fullscreen-icon-64.png" />
+    <Content Include="Resource\images\fullscreen-icon-ie.png" />
+    <Content Include="Resource\images\grabbing.png" />
+    <Content Include="Resource\images\No-bg.png" />
+    <Content Include="Resource\images\pause-icon-64.png" />
+    <Content Include="Resource\images\pause-icon-ie.png" />
+    <Content Include="Resource\images\play-icon-64.png" />
+    <Content Include="Resource\images\play-icon-ie.png" />
+    <Content Include="Resource\images\preloader.gif" />
+    <Content Include="Resource\images\thumb-overlay-play.png" />
+    <Content Include="Resource\images\x-mark-icon-64.png" />
+    <Content Include="Resource\images\x-mark-icon-ie.png" />
+    <Content Include="Resource\js\jquery.GalleryPostService.js" />
+    <Content Include="Resource\js\jquery.like.js" />
+    <Content Include="Resource\js\jquery.urls.js" />
+    <Content Include="Resource\js\lightbox.js" />
+    <Content Include="Resource\js\jquery.PostService.js" />
+    <Content Include="Resource\js\moment.min.js" />
+    <Content Include="Resource\plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.css" />
+    <Content Include="Resource\plugins\bootstrap-colorpicker\img\bootstrap-colorpicker\alpha.png" />
+    <Content Include="Resource\plugins\bootstrap-colorpicker\img\bootstrap-colorpicker\hue.png" />
+    <Content Include="Resource\plugins\bootstrap-colorpicker\img\bootstrap-colorpicker\saturation.png" />
+    <Content Include="Resource\plugins\bootstrap-colorpicker\js\bootstrap-colorpicker.js" />
+    <Content Include="Resource\plugins\bootstrap-colorpicker\js\commits.js" />
+    <Content Include="Resource\plugins\bootstrap-datetimepicker\css\bootstrap-datetimepicker-standalone.css" />
+    <Content Include="Resource\plugins\bootstrap-datetimepicker\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="Resource\plugins\bootstrap-datetimepicker\js\bootstrap-datetimepicker.min.js" />
+    <Content Include="Resource\plugins\ckeditor\build-config.js" />
+    <Content Include="Resource\plugins\ckeditor\ckeditor.js" />
+    <Content Include="Resource\plugins\ckeditor\config.js" />
+    <Content Include="Resource\plugins\ckeditor\contents.css" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\af.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ar.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\bg.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ca.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\cs.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\cy.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\da.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\de.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\el.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\en-gb.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\en.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\eo.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\es.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\et.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\fa.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\fi.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\fo.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\fr-ca.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\fr.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\gl.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\gu.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\he.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\hi.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\hr.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\hu.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\id.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\it.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ja.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\km.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ko.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ku.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\lt.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\lv.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\mk.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\mn.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\nb.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\nl.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\no.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\pl.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\pt-br.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\pt.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ro.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ru.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\si.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\sk.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\sl.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\sq.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\sr-latn.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\sr.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\sv.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\th.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\tr.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\tt.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ug.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\uk.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\vi.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\zh-cn.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\zh.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Resource\plugins\ckeditor\plugins\about\dialogs\about.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\about\dialogs\hidpi\logo_ckeditor.png" />
+    <Content Include="Resource\plugins\ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="Resource\plugins\ckeditor\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\dialogs\flash.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\icons\flash.png" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\icons\hidpi\flash.png" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\images\placeholder.png" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\af.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\ar.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\bg.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\bn.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\bs.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\ca.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\cs.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\cy.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\da.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\de.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\el.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\en-au.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\en-ca.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\en-gb.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\en.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\eo.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\es.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\et.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\eu.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\fa.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\fi.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\fo.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\fr-ca.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\fr.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\gl.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\gu.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\he.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\hi.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\hr.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\hu.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\id.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\is.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\it.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\ja.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\ka.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\km.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\ko.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\ku.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\lt.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\lv.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\mk.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\mn.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\ms.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\nb.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\nl.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\no.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\pl.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\pt-br.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\pt.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\ro.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\ru.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\si.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\sk.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\sl.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\sq.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\sr-latn.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\sr.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\sv.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\th.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\tr.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\tt.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\ug.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\uk.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\vi.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\zh-cn.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\lang\zh.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\flash\plugin.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\icons.png" />
+    <Content Include="Resource\plugins\ckeditor\plugins\icons_hidpi.png" />
+    <Content Include="Resource\plugins\ckeditor\plugins\image\dialogs\image.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\image\images\noimage.png" />
+    <Content Include="Resource\plugins\ckeditor\plugins\lineutils\dev\dnd.html" />
+    <Content Include="Resource\plugins\ckeditor\plugins\lineutils\dev\magicfinger.html" />
+    <Content Include="Resource\plugins\ckeditor\plugins\lineutils\plugin.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\link\dialogs\link.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\link\images\anchor.png" />
+    <Content Include="Resource\plugins\ckeditor\plugins\link\images\hidpi\anchor.png" />
+    <Content Include="Resource\plugins\ckeditor\plugins\magicline\images\hidpi\icon-rtl.png" />
+    <Content Include="Resource\plugins\ckeditor\plugins\magicline\images\hidpi\icon.png" />
+    <Content Include="Resource\plugins\ckeditor\plugins\magicline\images\icon-rtl.png" />
+    <Content Include="Resource\plugins\ckeditor\plugins\magicline\images\icon.png" />
+    <Content Include="Resource\plugins\ckeditor\plugins\pastefromword\filter\default.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\scayt\dialogs\options.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\scayt\dialogs\toolbar.css" />
+    <Content Include="Resource\plugins\ckeditor\plugins\selectimages\icon.png" />
+    <Content Include="Resource\plugins\ckeditor\plugins\selectimages\plugin.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\selectimages\template.html" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\af.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\ar.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\bg.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\ca.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\cs.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\cy.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\da.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\de.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\el.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\en-gb.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\en.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\eo.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\es.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\et.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\fa.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\fi.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\fr-ca.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\fr.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\gl.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\he.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\hr.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\hu.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\id.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\it.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\ja.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\km.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\ko.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\ku.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\lt.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\lv.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\nb.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\nl.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\no.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\pl.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\pt-br.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\pt.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\ru.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\si.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\sk.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\sl.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\sq.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\sv.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\th.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\tr.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\tt.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\ug.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\uk.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\vi.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\zh-cn.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\zh.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Resource\plugins\ckeditor\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\table\dialogs\table.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\video\dialogs\video.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\video\images\icon.png" />
+    <Content Include="Resource\plugins\ckeditor\plugins\video\images\placeholder.png" />
+    <Content Include="Resource\plugins\ckeditor\plugins\video\plugin.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\dev\assets\contents.css" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\dev\assets\sample.jpg" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\dev\assets\simplebox\contents.css" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\dev\assets\simplebox\dialogs\simplebox.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\dev\assets\simplebox\icons\simplebox.png" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\dev\assets\simplebox\plugin.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\dev\console.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\dev\nestedwidgets.html" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\dev\widgetstyles.html" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\images\handle.png" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\lang\af.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\lang\ar.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\lang\bg.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\lang\ca.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\lang\cs.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\lang\cy.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\lang\da.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\lang\de.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\lang\el.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\lang\en-gb.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\lang\en.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\lang\eo.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\lang\es.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\lang\fa.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\lang\fi.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\lang\fr.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\lang\gl.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\lang\he.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\lang\hr.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\lang\hu.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\lang\it.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\lang\ja.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\lang\km.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\lang\ko.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\lang\ku.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\lang\lv.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\lang\nb.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\lang\nl.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\lang\no.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\lang\pl.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\lang\pt-br.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\lang\pt.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\lang\ru.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\lang\sk.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\lang\sl.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\lang\sq.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\lang\sv.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\lang\tr.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\lang\tt.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\lang\ug.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\lang\uk.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\lang\vi.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\lang\zh-cn.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\lang\zh.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\widget\plugin.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\wsc\dialogs\ciframe.html" />
+    <Content Include="Resource\plugins\ckeditor\plugins\wsc\dialogs\tmpFrameset.html" />
+    <Content Include="Resource\plugins\ckeditor\plugins\wsc\dialogs\wsc.css" />
+    <Content Include="Resource\plugins\ckeditor\plugins\wsc\dialogs\wsc.js" />
+    <Content Include="Resource\plugins\ckeditor\plugins\wsc\dialogs\wsc_ie.js" />
+    <Content Include="Resource\plugins\ckeditor\styles.js" />
+    <Content Include="Resource\plugins\iCheck\jquery.icheck.js" />
+    <Content Include="Resource\plugins\iCheck\skins\all.css" />
+    <Content Include="Resource\plugins\iCheck\skins\flat\aero%402x.png" />
+    <Content Include="Resource\plugins\iCheck\skins\flat\aero.css" />
+    <Content Include="Resource\plugins\iCheck\skins\flat\aero.png" />
+    <Content Include="Resource\plugins\iCheck\skins\flat\blue%402x.png" />
+    <Content Include="Resource\plugins\iCheck\skins\flat\blue.css" />
+    <Content Include="Resource\plugins\iCheck\skins\flat\blue.png" />
+    <Content Include="Resource\plugins\iCheck\skins\flat\flat%402x.png" />
+    <Content Include="Resource\plugins\iCheck\skins\flat\flat.css" />
+    <Content Include="Resource\plugins\iCheck\skins\flat\flat.png" />
+    <Content Include="Resource\plugins\iCheck\skins\flat\green%402x.png" />
+    <Content Include="Resource\plugins\iCheck\skins\flat\green.css" />
+    <Content Include="Resource\plugins\iCheck\skins\flat\green.png" />
+    <Content Include="Resource\plugins\iCheck\skins\flat\grey%402x.png" />
+    <Content Include="Resource\plugins\iCheck\skins\flat\grey.css" />
+    <Content Include="Resource\plugins\iCheck\skins\flat\grey.png" />
+    <Content Include="Resource\plugins\iCheck\skins\flat\orange%402x.png" />
+    <Content Include="Resource\plugins\iCheck\skins\flat\orange.css" />
+    <Content Include="Resource\plugins\iCheck\skins\flat\orange.png" />
+    <Content Include="Resource\plugins\iCheck\skins\flat\pink%402x.png" />
+    <Content Include="Resource\plugins\iCheck\skins\flat\pink.css" />
+    <Content Include="Resource\plugins\iCheck\skins\flat\pink.png" />
+    <Content Include="Resource\plugins\iCheck\skins\flat\purple%402x.png" />
+    <Content Include="Resource\plugins\iCheck\skins\flat\purple.css" />
+    <Content Include="Resource\plugins\iCheck\skins\flat\purple.png" />
+    <Content Include="Resource\plugins\iCheck\skins\flat\red%402x.png" />
+    <Content Include="Resource\plugins\iCheck\skins\flat\red.css" />
+    <Content Include="Resource\plugins\iCheck\skins\flat\red.png" />
+    <Content Include="Resource\plugins\iCheck\skins\flat\yellow%402x.png" />
+    <Content Include="Resource\plugins\iCheck\skins\flat\yellow.css" />
+    <Content Include="Resource\plugins\iCheck\skins\flat\yellow.png" />
+    <Content Include="Resource\plugins\iCheck\skins\flat\_all.css" />
+    <Content Include="Resource\plugins\iCheck\skins\futurico\futurico%402x.png" />
+    <Content Include="Resource\plugins\iCheck\skins\futurico\futurico.css" />
+    <Content Include="Resource\plugins\iCheck\skins\futurico\futurico.png" />
+    <Content Include="Resource\plugins\iCheck\skins\line\aero.css" />
+    <Content Include="Resource\plugins\iCheck\skins\line\blue.css" />
+    <Content Include="Resource\plugins\iCheck\skins\line\green.css" />
+    <Content Include="Resource\plugins\iCheck\skins\line\grey.css" />
+    <Content Include="Resource\plugins\iCheck\skins\line\line%402x.png" />
+    <Content Include="Resource\plugins\iCheck\skins\line\line.css" />
+    <Content Include="Resource\plugins\iCheck\skins\line\line.png" />
+    <Content Include="Resource\plugins\iCheck\skins\line\orange.css" />
+    <Content Include="Resource\plugins\iCheck\skins\line\pink.css" />
+    <Content Include="Resource\plugins\iCheck\skins\line\purple.css" />
+    <Content Include="Resource\plugins\iCheck\skins\line\red.css" />
+    <Content Include="Resource\plugins\iCheck\skins\line\yellow.css" />
+    <Content Include="Resource\plugins\iCheck\skins\line\_all.css" />
+    <Content Include="Resource\plugins\iCheck\skins\minimal\aero%402x.png" />
+    <Content Include="Resource\plugins\iCheck\skins\minimal\aero.css" />
+    <Content Include="Resource\plugins\iCheck\skins\minimal\aero.png" />
+    <Content Include="Resource\plugins\iCheck\skins\minimal\blue%402x.png" />
+    <Content Include="Resource\plugins\iCheck\skins\minimal\blue.css" />
+    <Content Include="Resource\plugins\iCheck\skins\minimal\blue.png" />
+    <Content Include="Resource\plugins\iCheck\skins\minimal\green%402x.png" />
+    <Content Include="Resource\plugins\iCheck\skins\minimal\green.css" />
+    <Content Include="Resource\plugins\iCheck\skins\minimal\green.png" />
+    <Content Include="Resource\plugins\iCheck\skins\minimal\grey%402x.png" />
+    <Content Include="Resource\plugins\iCheck\skins\minimal\grey.css" />
+    <Content Include="Resource\plugins\iCheck\skins\minimal\grey.png" />
+    <Content Include="Resource\plugins\iCheck\skins\minimal\minimal%402x.png" />
+    <Content Include="Resource\plugins\iCheck\skins\minimal\minimal.css" />
+    <Content Include="Resource\plugins\iCheck\skins\minimal\minimal.png" />
+    <Content Include="Resource\plugins\iCheck\skins\minimal\orange%402x.png" />
+    <Content Include="Resource\plugins\iCheck\skins\minimal\orange.css" />
+    <Content Include="Resource\plugins\iCheck\skins\minimal\orange.png" />
+    <Content Include="Resource\plugins\iCheck\skins\minimal\pink%402x.png" />
+    <Content Include="Resource\plugins\iCheck\skins\minimal\pink.css" />
+    <Content Include="Resource\plugins\iCheck\skins\minimal\pink.png" />
+    <Content Include="Resource\plugins\iCheck\skins\minimal\purple%402x.png" />
+    <Content Include="Resource\plugins\iCheck\skins\minimal\purple.css" />
+    <Content Include="Resource\plugins\iCheck\skins\minimal\purple.png" />
+    <Content Include="Resource\plugins\iCheck\skins\minimal\red%402x.png" />
+    <Content Include="Resource\plugins\iCheck\skins\minimal\red.css" />
+    <Content Include="Resource\plugins\iCheck\skins\minimal\red.png" />
+    <Content Include="Resource\plugins\iCheck\skins\minimal\yellow%402x.png" />
+    <Content Include="Resource\plugins\iCheck\skins\minimal\yellow.css" />
+    <Content Include="Resource\plugins\iCheck\skins\minimal\yellow.png" />
+    <Content Include="Resource\plugins\iCheck\skins\minimal\_all.css" />
+    <Content Include="Resource\plugins\iCheck\skins\polaris\polaris%402x.png" />
+    <Content Include="Resource\plugins\iCheck\skins\polaris\polaris.css" />
+    <Content Include="Resource\plugins\iCheck\skins\polaris\polaris.png" />
+    <Content Include="Resource\plugins\iCheck\skins\square\aero%402x.png" />
+    <Content Include="Resource\plugins\iCheck\skins\square\aero.css" />
+    <Content Include="Resource\plugins\iCheck\skins\square\aero.png" />
+    <Content Include="Resource\plugins\iCheck\skins\square\blue%402x.png" />
+    <Content Include="Resource\plugins\iCheck\skins\square\blue.css" />
+    <Content Include="Resource\plugins\iCheck\skins\square\blue.png" />
+    <Content Include="Resource\plugins\iCheck\skins\square\green%402x.png" />
+    <Content Include="Resource\plugins\iCheck\skins\square\green.css" />
+    <Content Include="Resource\plugins\iCheck\skins\square\green.png" />
+    <Content Include="Resource\plugins\iCheck\skins\square\grey%402x.png" />
+    <Content Include="Resource\plugins\iCheck\skins\square\grey.css" />
+    <Content Include="Resource\plugins\iCheck\skins\square\grey.png" />
+    <Content Include="Resource\plugins\iCheck\skins\square\orange%402x.png" />
+    <Content Include="Resource\plugins\iCheck\skins\square\orange.css" />
+    <Content Include="Resource\plugins\iCheck\skins\square\orange.png" />
+    <Content Include="Resource\plugins\iCheck\skins\square\pink%402x.png" />
+    <Content Include="Resource\plugins\iCheck\skins\square\pink.css" />
+    <Content Include="Resource\plugins\iCheck\skins\square\pink.png" />
+    <Content Include="Resource\plugins\iCheck\skins\square\purple%402x.png" />
+    <Content Include="Resource\plugins\iCheck\skins\square\purple.css" />
+    <Content Include="Resource\plugins\iCheck\skins\square\purple.png" />
+    <Content Include="Resource\plugins\iCheck\skins\square\red%402x.png" />
+    <Content Include="Resource\plugins\iCheck\skins\square\red.css" />
+    <Content Include="Resource\plugins\iCheck\skins\square\red.png" />
+    <Content Include="Resource\plugins\iCheck\skins\square\square%402x.png" />
+    <Content Include="Resource\plugins\iCheck\skins\square\square.css" />
+    <Content Include="Resource\plugins\iCheck\skins\square\square.png" />
+    <Content Include="Resource\plugins\iCheck\skins\square\yellow%402x.png" />
+    <Content Include="Resource\plugins\iCheck\skins\square\yellow.css" />
+    <Content Include="Resource\plugins\iCheck\skins\square\yellow.png" />
+    <Content Include="Resource\plugins\iCheck\skins\square\_all.css" />
+    <Content Include="Resource\plugins\iCheck\skins\ui_sliders.html" />
+    <Content Include="Resource\plugins\select2\select2.full.min.js" />
+    <Content Include="Resource\plugins\select2\select2.min.css" />
+    <Content Include="Resource\plugins\validation\jquery.validationEngine-ca.js" />
+    <Content Include="Resource\plugins\validation\jquery.validationEngine-cz.js" />
+    <Content Include="Resource\plugins\validation\jquery.validationEngine-da.js" />
+    <Content Include="Resource\plugins\validation\jquery.validationEngine-de.js" />
+    <Content Include="Resource\plugins\validation\jquery.validationEngine-el.js" />
+    <Content Include="Resource\plugins\validation\jquery.validationEngine-es.js" />
+    <Content Include="Resource\plugins\validation\jquery.validationEngine-et.js" />
+    <Content Include="Resource\plugins\validation\jquery.validationEngine-fa.js" />
+    <Content Include="Resource\plugins\validation\jquery.validationEngine-fi.js" />
+    <Content Include="Resource\plugins\validation\jquery.validationEngine-fr.js" />
+    <Content Include="Resource\plugins\validation\jquery.validationEngine-he.js" />
+    <Content Include="Resource\plugins\validation\jquery.validationEngine-hr.js" />
+    <Content Include="Resource\plugins\validation\jquery.validationEngine-hu.js" />
+    <Content Include="Resource\plugins\validation\jquery.validationEngine-id.js" />
+    <Content Include="Resource\plugins\validation\jquery.validationEngine-it.js" />
+    <Content Include="Resource\plugins\validation\jquery.validationEngine-ja.js" />
+    <Content Include="Resource\plugins\validation\jquery.validationEngine-lt.js" />
+    <Content Include="Resource\plugins\validation\jquery.validationEngine-nl.js" />
+    <Content Include="Resource\plugins\validation\jquery.validationEngine-no.js" />
+    <Content Include="Resource\plugins\validation\jquery.validationEngine-pl.js" />
+    <Content Include="Resource\plugins\validation\jquery.validationEngine-pt-BR.js" />
+    <Content Include="Resource\plugins\validation\jquery.validationEngine-pt.js" />
+    <Content Include="Resource\plugins\validation\jquery.validationEngine-ro.js" />
+    <Content Include="Resource\plugins\validation\jquery.validationEngine-ru.js" />
+    <Content Include="Resource\plugins\validation\jquery.validationEngine-sr-Cyrl.js" />
+    <Content Include="Resource\plugins\validation\jquery.validationEngine-sr-Latn.js" />
+    <Content Include="Resource\plugins\validation\jquery.validationEngine-sv.js" />
+    <Content Include="Resource\plugins\validation\jquery.validationEngine-tr.js" />
+    <Content Include="Resource\plugins\validation\jquery.validationEngine-vi.js" />
+    <Content Include="Resource\plugins\validation\jquery.validationEngine-zh-cn.js" />
+    <Content Include="Resource\plugins\validation\jquery.validationEngine-zh-tw.js" />
+    <Content Include="Resource\xml\LayerEntity.xml" />
+    <Content Include="Resource\xml\SelectIcons.xml" />
+    <Content Include="Resource_RichUrls.ascx" />
+    <Content Include="ModuleCore\Templates\NVelocity配置详解.txt" />
+    <Content Include="Index_Manager.aspx" />
+    <Content Include="Manager_ErrorCatch.ascx" />
+    <Content Include="Resource\css\dropzone.css" />
+    <Content Include="Resource\images\spritemap%402x.png" />
+    <Content Include="Resource\images\spritemap.png" />
+    <Content Include="Resource\js\dropzone.js" />
+    <Content Include="Resource\js\jquery-migrate.min.js" />
+    <Content Include="Resource\js\jquery.fancybox-media.js" />
+    <Content Include="Resource\js\jquery.fancybox.js" />
+    <Content Include="Resource\js\jquery.fancybox215.js" />
+    <Content Include="Resource\plugins\bootstrap-switch\examples\index.html" />
+    <Content Include="Resource\plugins\bootstrap-switch\static\js\bootstrap-switch.js" />
+    <Content Include="Resource\plugins\bootstrap-switch\static\js\bootstrap-switch.min.js" />
+    <Content Include="Resource\plugins\bootstrap-switch\static\stylesheets\bootstrap-switch.css" />
+    <Content Include="Resource\plugins\bootstrap-switch\static\stylesheets\flat-ui-fonts.css" />
+    <Content Include="Resource\plugins\nestable\index.html" />
+    <Content Include="Resource\plugins\nestable\jquery.nestable.js" />
+    <Content Include="Resource_DropzoneUpload.ascx" />
+    <Content Include="Resource_FeaturedImage.ascx" />
+    <Content Include="Resource_FeaturedImage.aspx" />
+    <Content Include="Resource_Item.ascx" />
+    <Content Include="Resource_Item.aspx" />
+    <Content Include="Resource_jQueryFileUpload.aspx" />
+    <Content Include="Resource_SelectIcons.ascx" />
+    <Content Include="Setting_Library.ascx" />
+    <Content Include="Setting_jQuery.ascx" />
+    <Content Include="Resource\css\main-responsive.css" />
+    <Content Include="Resource\css\main.css" />
+    <Content Include="Resource\css\rtl-version.css" />
+    <Content Include="Resource\css\theme_black_and_white.css" />
+    <Content Include="Resource\css\theme_dark.css" />
+    <Content Include="Resource\css\theme_green.css" />
+    <Content Include="Resource\css\theme_light.css" />
+    <Content Include="Resource\css\theme_navy.css" />
+    <Content Include="Resource\fonts\fonts\clip-font.svg" />
+    <Content Include="Resource\fonts\lte-ie7.js" />
+    <Content Include="Resource\fonts\style.css" />
+    <Content Include="Resource\images\fancybox\blank.gif" />
+    <Content Include="Resource\images\fancybox\fancybox_loading.gif" />
+    <Content Include="Resource\images\fancybox\fancybox_overlay.png" />
+    <Content Include="Resource\images\fancybox\fancybox_sprite.png" />
+    <Content Include="Resource\css\jquery.fancybox.css" />
+    <Content Include="Resource\js\form-elements.js" />
+    <Content Include="Resource\js\jquery.timers.js" />
+    <Content Include="Resource\images\dark_rounded\btnNext.png" />
+    <Content Include="Resource\images\dark_rounded\btnPrevious.png" />
+    <Content Include="Resource\images\dark_rounded\contentPattern.png" />
+    <Content Include="Resource\images\dark_rounded\default_thumbnail.gif" />
+    <Content Include="Resource\images\dark_rounded\loader.gif" />
+    <Content Include="Resource\images\dark_rounded\sprite.png" />
+    <Content Include="Resource\images\dark_square\btnNext.png" />
+    <Content Include="Resource\images\dark_square\btnPrevious.png" />
+    <Content Include="Resource\images\dark_square\contentPattern.png" />
+    <Content Include="Resource\images\dark_square\default_thumbnail.gif" />
+    <Content Include="Resource\images\dark_square\loader.gif" />
+    <Content Include="Resource\images\dark_square\sprite.png" />
+    <Content Include="Resource\images\default\default_thumb.png" />
+    <Content Include="Resource\images\default\loader.gif" />
+    <Content Include="Resource\images\default\sprite.png" />
+    <Content Include="Resource\images\default\sprite_next.png" />
+    <Content Include="Resource\images\default\sprite_prev.png" />
+    <Content Include="Resource\images\default\sprite_x.png" />
+    <Content Include="Resource\images\default\sprite_y.png" />
+    <Content Include="Resource\images\facebook\btnNext.png" />
+    <Content Include="Resource\images\facebook\btnPrevious.png" />
+    <Content Include="Resource\images\facebook\contentPatternBottom.png" />
+    <Content Include="Resource\images\facebook\contentPatternLeft.png" />
+    <Content Include="Resource\images\facebook\contentPatternRight.png" />
+    <Content Include="Resource\images\facebook\contentPatternTop.png" />
+    <Content Include="Resource\images\facebook\default_thumbnail.gif" />
+    <Content Include="Resource\images\facebook\loader.gif" />
+    <Content Include="Resource\images\facebook\sprite.png" />
+    <Content Include="Resource\images\light_rounded\btnNext.png" />
+    <Content Include="Resource\images\light_rounded\btnPrevious.png" />
+    <Content Include="Resource\images\light_rounded\default_thumbnail.gif" />
+    <Content Include="Resource\images\light_rounded\loader.gif" />
+    <Content Include="Resource\images\light_rounded\sprite.png" />
+    <Content Include="Resource\images\light_square\btnNext.png" />
+    <Content Include="Resource\images\light_square\btnPrevious.png" />
+    <Content Include="Resource\images\light_square\default_thumbnail.gif" />
+    <Content Include="Resource\images\light_square\loader.gif" />
+    <Content Include="Resource\images\light_square\sprite.png" />
+    <Content Include="Resource\css\jquery.prettyPhoto.css" />
+    <Content Include="Resource\js\jquery-ui.min.js" />
+    <Content Include="Resource\js\jquery.min.js" />
+    <Content Include="Resource\js\jquery.mousewheel.min.js" />
+    <Content Include="Resource\js\jquery.prettyPhoto.js" />
+    <Content Include="Resource\css\jquery-ui-1.7.custom.css" />
+    <Content Include="Resource\css\Modules.css" />
+    <Content Include="Resource\css\thickbox.css" />
+    <Content Include="Resource\images\arrows.png" />
+    <Content Include="Resource\images\asyncbox_bg.gif" />
+    <Content Include="Resource\images\asynctips_bg.gif" />
+    <Content Include="Resource\images\back.gif" />
+    <Content Include="Resource\images\building.gif" />
+    <Content Include="Resource\images\button-grad.png" />
+    <Content Include="Resource\images\button-grey.png" />
+    <Content Include="Resource\images\buyit.gif" />
+    <Content Include="Resource\images\cog.gif" />
+    <Content Include="Resource\images\contactus.gif" />
+    <Content Include="Resource\images\delete.gif" />
+    <Content Include="Resource\images\document.gif" />
+    <Content Include="Resource\images\help.gif" />
+    <Content Include="Resource\images\icon.gif" />
+    <Content Include="Resource\images\lightning.gif" />
+    <Content Include="Resource\images\no_image.png" />
+    <Content Include="Resource\images\Play.png" />
+    <Content Include="Resource\images\Stop.png" />
+    <Content Include="Resource\images\wait.gif" />
+    <Content Include="Resource\images\wait_bg.gif" />
+    <Content Include="Resource\images\white-grad.png" />
+    <Content Include="Resource\images\xit.gif" />
+    <Content Include="Resource\js\jquery.cookie.js" />
+    <Content Include="Resource\js\jquery.easing.js" />
+    <Content Include="Resource\js\jquery.tmpl.min.js" />
+    <Content Include="Resource\js\jquery.validationEngine-en.js" />
+    <Content Include="Resource\js\jquery.validationEngine.js" />
+    <Content Include="Resource\js\main.js" />
+    <Content Include="Resource\js\vanadium.js" />
+    <Content Include="Resource\plugins\autosize\demo.html" />
+    <Content Include="Resource\plugins\autosize\jquery.autosize.js" />
+    <Content Include="Resource\plugins\autosize\jquery.autosize.min.js" />
+    <Content Include="Resource\plugins\blockUI\jquery.blockUI.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\css\datepicker.css" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\bootstrap-datepicker.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.ar.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.bg.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.ca.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.cs.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.cy.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.da.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.de.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.el.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.es.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.et.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.fi.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.fr.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.he.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.hr.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.hu.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.id.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.is.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.it.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.ja.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.ka.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.kr.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.lt.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.lv.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.mk.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.ms.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.nb.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.nl-BE.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.nl.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.no.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.pl.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.pt-BR.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.pt.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.ro.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.rs-latin.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.rs.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.ru.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.sk.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.sl.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.sq.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.sv.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.sw.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.th.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.tr.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.ua.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.uk.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.zh-CN.js" />
+    <Content Include="Resource\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.zh-TW.js" />
+    <Content Include="Resource\plugins\bootstrap-fileupload\bootstrap-fileupload.css" />
+    <Content Include="Resource\plugins\bootstrap-fileupload\bootstrap-fileupload.js" />
+    <Content Include="Resource\plugins\bootstrap-fileupload\bootstrap-fileupload.min.css" />
+    <Content Include="Resource\plugins\bootstrap-fileupload\bootstrap-fileupload.min.js" />
+    <Content Include="Resource\plugins\bootstrap-modal\bs3.html" />
+    <Content Include="Resource\plugins\bootstrap-modal\css\bootstrap-modal-bs3patch.css" />
+    <Content Include="Resource\plugins\bootstrap-modal\css\bootstrap-modal.css" />
+    <Content Include="Resource\plugins\bootstrap-modal\img\ajax-loader.gif" />
+    <Content Include="Resource\plugins\bootstrap-modal\js\bootstrap-modal.js" />
+    <Content Include="Resource\plugins\bootstrap-modal\js\bootstrap-modalmanager.js" />
+    <Content Include="Resource\plugins\bootstrap-paginator\build\bootstrap-paginator.min.js" />
+    <Content Include="Resource\plugins\bootstrap-paginator\css\bootstrap-responsive.css" />
+    <Content Include="Resource\plugins\bootstrap-paginator\css\bootstrap-responsive.min.css" />
+    <Content Include="Resource\plugins\bootstrap-paginator\css\bootstrap.css" />
+    <Content Include="Resource\plugins\bootstrap-paginator\css\bootstrap.min.css" />
+    <Content Include="Resource\plugins\bootstrap-paginator\css\bootstrapv3.css" />
+    <Content Include="Resource\plugins\bootstrap-paginator\css\bootstrapv3.min.css" />
+    <Content Include="Resource\plugins\bootstrap-paginator\css\documentation.css" />
+    <Content Include="Resource\plugins\bootstrap-paginator\css\highlight.js\arta.css" />
+    <Content Include="Resource\plugins\bootstrap-paginator\css\highlight.js\ascetic.css" />
+    <Content Include="Resource\plugins\bootstrap-paginator\css\highlight.js\brown_paper.css" />
+    <Content Include="Resource\plugins\bootstrap-paginator\css\highlight.js\brown_papersq.png" />
+    <Content Include="Resource\plugins\bootstrap-paginator\css\highlight.js\dark.css" />
+    <Content Include="Resource\plugins\bootstrap-paginator\css\highlight.js\default.css" />
+    <Content Include="Resource\plugins\bootstrap-paginator\css\highlight.js\far.css" />
+    <Content Include="Resource\plugins\bootstrap-paginator\css\highlight.js\github.css" />
+    <Content Include="Resource\plugins\bootstrap-paginator\css\highlight.js\googlecode.css" />
+    <Content Include="Resource\plugins\bootstrap-paginator\css\highlight.js\idea.css" />
+    <Content Include="Resource\plugins\bootstrap-paginator\css\highlight.js\ir_black.css" />
+    <Content Include="Resource\plugins\bootstrap-paginator\css\highlight.js\magula.css" />
+    <Content Include="Resource\plugins\bootstrap-paginator\css\highlight.js\monokai.css" />
+    <Content Include="Resource\plugins\bootstrap-paginator\css\highlight.js\pojoaque.css" />
+    <Content Include="Resource\plugins\bootstrap-paginator\css\highlight.js\pojoaque.jpg" />
+    <Content Include="Resource\plugins\bootstrap-paginator\css\highlight.js\rainbow.css" />
+    <Content Include="Resource\plugins\bootstrap-paginator\css\highlight.js\school_book.css" />
+    <Content Include="Resource\plugins\bootstrap-paginator\css\highlight.js\school_book.png" />
+    <Content Include="Resource\plugins\bootstrap-paginator\css\highlight.js\solarized_dark.css" />
+    <Content Include="Resource\plugins\bootstrap-paginator\css\highlight.js\solarized_light.css" />
+    <Content Include="Resource\plugins\bootstrap-paginator\css\highlight.js\sunburst.css" />
+    <Content Include="Resource\plugins\bootstrap-paginator\css\highlight.js\tomorrow-night-blue.css" />
+    <Content Include="Resource\plugins\bootstrap-paginator\css\highlight.js\tomorrow-night-bright.css" />
+    <Content Include="Resource\plugins\bootstrap-paginator\css\highlight.js\tomorrow-night-eighties.css" />
+    <Content Include="Resource\plugins\bootstrap-paginator\css\highlight.js\tomorrow-night.css" />
+    <Content Include="Resource\plugins\bootstrap-paginator\css\highlight.js\tomorrow.css" />
+    <Content Include="Resource\plugins\bootstrap-paginator\css\highlight.js\vs.css" />
+    <Content Include="Resource\plugins\bootstrap-paginator\css\highlight.js\xcode.css" />
+    <Content Include="Resource\plugins\bootstrap-paginator\css\highlight.js\zenburn.css" />
+    <Content Include="Resource\plugins\bootstrap-paginator\css\qunit-1.11.0.css" />
+    <Content Include="Resource\plugins\bootstrap-paginator\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Resource\plugins\bootstrap-paginator\img\glyphicons-halflings-white.png" />
+    <Content Include="Resource\plugins\bootstrap-paginator\img\glyphicons-halflings.png" />
+    <Content Include="Resource\plugins\bootstrap-paginator\img\illustration.png" />
+    <Content Include="Resource\plugins\bootstrap-paginator\lib\bootstrap.js" />
+    <Content Include="Resource\plugins\bootstrap-paginator\lib\bootstrap.min.js" />
+    <Content Include="Resource\plugins\bootstrap-paginator\lib\bootstrapv3.js" />
+    <Content Include="Resource\plugins\bootstrap-paginator\lib\highlight.pack.js" />
+    <Content Include="Resource\plugins\bootstrap-paginator\lib\jquery-1.9.1.min.js" />
+    <Content Include="Resource\plugins\bootstrap-paginator\lib\jquery.history.js" />
+    <Content Include="Resource\plugins\bootstrap-paginator\lib\qunit-1.11.0.js" />
+    <Content Include="Resource\plugins\bootstrap-paginator\src\bootstrap-paginator.js" />
+    <Content Include="Resource\plugins\bootstrap-social-buttons\social-buttons-3.css" />
+    <Content Include="Resource\plugins\bootstrap-social-buttons\social-buttons.css" />
+    <Content Include="Resource\plugins\bootstrap-timepicker\css\bootstrap-timepicker.css" />
+    <Content Include="Resource\plugins\bootstrap-timepicker\css\bootstrap-timepicker.min.css" />
+    <Content Include="Resource\plugins\bootstrap-timepicker\Gruntfile.js" />
+    <Content Include="Resource\plugins\bootstrap-timepicker\js\bootstrap-timepicker.js" />
+    <Content Include="Resource\plugins\bootstrap-timepicker\js\bootstrap-timepicker.min.js" />
+    <Content Include="Resource\plugins\bootstrap-timepicker\spec\js\fixtures\timepicker.html" />
+    <Content Include="Resource\plugins\bootstrap-timepicker\spec\js\helpers\jasmine-jquery.js" />
+    <Content Include="Resource\plugins\bootstrap-timepicker\spec\js\helpers\SpecHelper.js" />
+    <Content Include="Resource\plugins\bootstrap-timepicker\spec\js\KeyboardEventsSpec.js" />
+    <Content Include="Resource\plugins\bootstrap-timepicker\spec\js\MouseEventsSpec.js" />
+    <Content Include="Resource\plugins\bootstrap-timepicker\spec\js\TimepickerSpec.js" />
+    <Content Include="Resource\plugins\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Resource\plugins\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Resource\plugins\bootstrap\css\bootstrap.css" />
+    <Content Include="Resource\plugins\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Resource\plugins\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Resource\plugins\bootstrap\js\bootstrap.js" />
+    <Content Include="Resource\plugins\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Resource\plugins\css3-animation\animations.css" />
+    <Content Include="Resource\plugins\datepicker\css\datepicker.css" />
+    <Content Include="Resource\plugins\datepicker\js\bootstrap-datepicker.js" />
+    <Content Include="Resource\plugins\excanvas.min.js" />
+    <Content Include="Resource\plugins\flot\examples\ajax\index.html" />
+    <Content Include="Resource\plugins\flot\examples\annotating\index.html" />
+    <Content Include="Resource\plugins\flot\examples\axes-interacting\index.html" />
+    <Content Include="Resource\plugins\flot\examples\axes-multiple\index.html" />
+    <Content Include="Resource\plugins\flot\examples\axes-time-zones\date.js" />
+    <Content Include="Resource\plugins\flot\examples\axes-time-zones\index.html" />
+    <Content Include="Resource\plugins\flot\examples\axes-time\index.html" />
+    <Content Include="Resource\plugins\flot\examples\background.png" />
+    <Content Include="Resource\plugins\flot\examples\basic-options\index.html" />
+    <Content Include="Resource\plugins\flot\examples\basic-usage\index.html" />
+    <Content Include="Resource\plugins\flot\examples\canvas\index.html" />
+    <Content Include="Resource\plugins\flot\examples\categories\index.html" />
+    <Content Include="Resource\plugins\flot\examples\examples.css" />
+    <Content Include="Resource\plugins\flot\examples\image\hs-2004-27-a-large-web.jpg" />
+    <Content Include="Resource\plugins\flot\examples\image\index.html" />
+    <Content Include="Resource\plugins\flot\examples\index.html" />
+    <Content Include="Resource\plugins\flot\examples\interacting\index.html" />
+    <Content Include="Resource\plugins\flot\examples\navigate\arrow-down.gif" />
+    <Content Include="Resource\plugins\flot\examples\navigate\arrow-left.gif" />
+    <Content Include="Resource\plugins\flot\examples\navigate\arrow-right.gif" />
+    <Content Include="Resource\plugins\flot\examples\navigate\arrow-up.gif" />
+    <Content Include="Resource\plugins\flot\examples\navigate\index.html" />
+    <Content Include="Resource\plugins\flot\examples\percentiles\index.html" />
+    <Content Include="Resource\plugins\flot\examples\realtime\index.html" />
+    <Content Include="Resource\plugins\flot\examples\resize\index.html" />
+    <Content Include="Resource\plugins\flot\examples\selection\index.html" />
+    <Content Include="Resource\plugins\flot\examples\series-errorbars\index.html" />
+    <Content Include="Resource\plugins\flot\examples\series-pie\index.html" />
+    <Content Include="Resource\plugins\flot\examples\series-toggle\index.html" />
+    <Content Include="Resource\plugins\flot\examples\series-types\index.html" />
+    <Content Include="Resource\plugins\flot\examples\shared\jquery-ui\jquery-ui.min.css" />
+    <Content Include="Resource\plugins\flot\examples\shared\jquery-ui\jquery-ui.min.js" />
+    <Content Include="Resource\plugins\flot\examples\stacking\index.html" />
+    <Content Include="Resource\plugins\flot\examples\symbols\index.html" />
+    <Content Include="Resource\plugins\flot\examples\threshold\index.html" />
+    <Content Include="Resource\plugins\flot\examples\tracking\index.html" />
+    <Content Include="Resource\plugins\flot\examples\visitors\index.html" />
+    <Content Include="Resource\plugins\flot\examples\zooming\index.html" />
+    <Content Include="Resource\plugins\flot\excanvas.js" />
+    <Content Include="Resource\plugins\flot\excanvas.min.js" />
+    <Content Include="Resource\plugins\flot\jquery.colorhelpers.js" />
+    <Content Include="Resource\plugins\flot\jquery.colorhelpers.min.js" />
+    <Content Include="Resource\plugins\flot\jquery.flot.canvas.js" />
+    <Content Include="Resource\plugins\flot\jquery.flot.canvas.min.js" />
+    <Content Include="Resource\plugins\flot\jquery.flot.categories.js" />
+    <Content Include="Resource\plugins\flot\jquery.flot.categories.min.js" />
+    <Content Include="Resource\plugins\flot\jquery.flot.crosshair.js" />
+    <Content Include="Resource\plugins\flot\jquery.flot.crosshair.min.js" />
+    <Content Include="Resource\plugins\flot\jquery.flot.errorbars.js" />
+    <Content Include="Resource\plugins\flot\jquery.flot.errorbars.min.js" />
+    <Content Include="Resource\plugins\flot\jquery.flot.fillbetween.js" />
+    <Content Include="Resource\plugins\flot\jquery.flot.fillbetween.min.js" />
+    <Content Include="Resource\plugins\flot\jquery.flot.image.js" />
+    <Content Include="Resource\plugins\flot\jquery.flot.image.min.js" />
+    <Content Include="Resource\plugins\flot\jquery.flot.js" />
+    <Content Include="Resource\plugins\flot\jquery.flot.min.js" />
+    <Content Include="Resource\plugins\flot\jquery.flot.navigate.js" />
+    <Content Include="Resource\plugins\flot\jquery.flot.navigate.min.js" />
+    <Content Include="Resource\plugins\flot\jquery.flot.pie.js" />
+    <Content Include="Resource\plugins\flot\jquery.flot.pie.min.js" />
+    <Content Include="Resource\plugins\flot\jquery.flot.resize.js" />
+    <Content Include="Resource\plugins\flot\jquery.flot.resize.min.js" />
+    <Content Include="Resource\plugins\flot\jquery.flot.selection.js" />
+    <Content Include="Resource\plugins\flot\jquery.flot.selection.min.js" />
+    <Content Include="Resource\plugins\flot\jquery.flot.stack.js" />
+    <Content Include="Resource\plugins\flot\jquery.flot.stack.min.js" />
+    <Content Include="Resource\plugins\flot\jquery.flot.symbol.js" />
+    <Content Include="Resource\plugins\flot\jquery.flot.symbol.min.js" />
+    <Content Include="Resource\plugins\flot\jquery.flot.threshold.js" />
+    <Content Include="Resource\plugins\flot\jquery.flot.threshold.min.js" />
+    <Content Include="Resource\plugins\flot\jquery.flot.time.js" />
+    <Content Include="Resource\plugins\flot\jquery.flot.time.min.js" />
+    <Content Include="Resource\plugins\flot\jquery.js" />
+    <Content Include="Resource\plugins\flot\jquery.min.js" />
+    <Content Include="Resource\plugins\flot\LICENSE.txt" />
+    <Content Include="Resource\plugins\font-awesome\css\font-awesome.css" />
+    <Content Include="Resource\plugins\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Resource\plugins\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Resource\plugins\jQuery-Tags-Input\example.html" />
+    <Content Include="Resource\plugins\jQuery-Tags-Input\jquery.tagsinput.css" />
+    <Content Include="Resource\plugins\jQuery-Tags-Input\jquery.tagsinput.js" />
+    <Content Include="Resource\plugins\jQuery-Tags-Input\jquery.tagsinput.min.js" />
+    <Content Include="Resource\plugins\jQuery-Tags-Input\test\fake_json_endpoint.html" />
+    <Content Include="Resource\plugins\jQuery-Tags-Input\test\fake_plaintext_endpoint.html" />
+    <Content Include="Resource\plugins\jquery-ui-touch-punch\jquery.ui.touch-punch.js" />
+    <Content Include="Resource\plugins\jquery-ui-touch-punch\jquery.ui.touch-punch.min.js" />
+    <Content Include="Resource\plugins\ladda-bootstrap\css\prism.css" />
+    <Content Include="Resource\plugins\ladda-bootstrap\dist\ladda-themeless.min.css" />
+    <Content Include="Resource\plugins\ladda-bootstrap\dist\ladda.min.css" />
+    <Content Include="Resource\plugins\ladda-bootstrap\dist\ladda.min.js" />
+    <Content Include="Resource\plugins\ladda-bootstrap\dist\spin.min.js" />
+    <Content Include="Resource\plugins\ladda-bootstrap\index.html" />
+    <Content Include="Resource\plugins\ladda-bootstrap\js\ladda.js" />
+    <Content Include="Resource\plugins\ladda-bootstrap\js\prism.js" />
+    <Content Include="Resource\plugins\ladda-bootstrap\js\spin.js" />
+    <Content Include="Resource\plugins\less\less-1.5.0.min.js" />
+    <Content Include="Resource\plugins\perfect-scrollbar\examples\azusa.jpg" />
+    <Content Include="Resource\plugins\perfect-scrollbar\examples\options-default.html" />
+    <Content Include="Resource\plugins\perfect-scrollbar\examples\options-minScrollbarLength.html" />
+    <Content Include="Resource\plugins\perfect-scrollbar\examples\options-useBothWheelAxes.html" />
+    <Content Include="Resource\plugins\perfect-scrollbar\examples\options-wheelPropagation.html" />
+    <Content Include="Resource\plugins\perfect-scrollbar\examples\options-wheelSpeed.html" />
+    <Content Include="Resource\plugins\perfect-scrollbar\examples\text-content.html" />
+    <Content Include="Resource\plugins\perfect-scrollbar\Gruntfile.js" />
+    <Content Include="Resource\plugins\perfect-scrollbar\min\perfect-scrollbar-0.4.5.min.css" />
+    <Content Include="Resource\plugins\perfect-scrollbar\min\perfect-scrollbar-0.4.5.min.js" />
+    <Content Include="Resource\plugins\perfect-scrollbar\min\perfect-scrollbar-0.4.5.with-mousewheel.min.js" />
+    <Content Include="Resource\plugins\perfect-scrollbar\src\jquery.mousewheel.js" />
+    <Content Include="Resource\plugins\perfect-scrollbar\src\perfect-scrollbar-rtl.css" />
+    <Content Include="Resource\plugins\perfect-scrollbar\src\perfect-scrollbar-rtl.js" />
+    <Content Include="Resource\plugins\perfect-scrollbar\src\perfect-scrollbar.css" />
+    <Content Include="Resource\plugins\perfect-scrollbar\src\perfect-scrollbar.js" />
+    <Content Include="Resource\plugins\respond.min.js" />
+    <Content Include="Resource\plugins\tinymce\jquery.tinymce.min.js" />
+    <Content Include="Resource\plugins\tinymce\license.txt" />
+    <Content Include="Resource\plugins\tinymce\plugins\advlist\plugin.min.js" />
+    <Content Include="Resource\plugins\tinymce\plugins\anchor\plugin.min.js" />
+    <Content Include="Resource\plugins\tinymce\plugins\autolink\plugin.min.js" />
+    <Content Include="Resource\plugins\tinymce\plugins\autoresize\plugin.min.js" />
+    <Content Include="Resource\plugins\tinymce\plugins\autosave\plugin.min.js" />
+    <Content Include="Resource\plugins\tinymce\plugins\bbcode\plugin.min.js" />
+    <Content Include="Resource\plugins\tinymce\plugins\charmap\plugin.min.js" />
+    <Content Include="Resource\plugins\tinymce\plugins\code\plugin.min.js" />
+    <Content Include="Resource\plugins\tinymce\plugins\contextmenu\plugin.min.js" />
+    <Content Include="Resource\plugins\tinymce\plugins\directionality\plugin.min.js" />
+    <Content Include="Resource\plugins\tinymce\plugins\emoticons\img\smiley-cool.gif" />
+    <Content Include="Resource\plugins\tinymce\plugins\emoticons\img\smiley-cry.gif" />
+    <Content Include="Resource\plugins\tinymce\plugins\emoticons\img\smiley-embarassed.gif" />
+    <Content Include="Resource\plugins\tinymce\plugins\emoticons\img\smiley-foot-in-mouth.gif" />
+    <Content Include="Resource\plugins\tinymce\plugins\emoticons\img\smiley-frown.gif" />
+    <Content Include="Resource\plugins\tinymce\plugins\emoticons\img\smiley-innocent.gif" />
+    <Content Include="Resource\plugins\tinymce\plugins\emoticons\img\smiley-kiss.gif" />
+    <Content Include="Resource\plugins\tinymce\plugins\emoticons\img\smiley-laughing.gif" />
+    <Content Include="Resource\plugins\tinymce\plugins\emoticons\img\smiley-money-mouth.gif" />
+    <Content Include="Resource\plugins\tinymce\plugins\emoticons\img\smiley-sealed.gif" />
+    <Content Include="Resource\plugins\tinymce\plugins\emoticons\img\smiley-smile.gif" />
+    <Content Include="Resource\plugins\tinymce\plugins\emoticons\img\smiley-surprised.gif" />
+    <Content Include="Resource\plugins\tinymce\plugins\emoticons\img\smiley-tongue-out.gif" />
+    <Content Include="Resource\plugins\tinymce\plugins\emoticons\img\smiley-undecided.gif" />
+    <Content Include="Resource\plugins\tinymce\plugins\emoticons\img\smiley-wink.gif" />
+    <Content Include="Resource\plugins\tinymce\plugins\emoticons\img\smiley-yell.gif" />
+    <Content Include="Resource\plugins\tinymce\plugins\emoticons\plugin.min.js" />
+    <Content Include="Resource\plugins\tinymce\plugins\example\plugin.min.js" />
+    <Content Include="Resource\plugins\tinymce\plugins\example_dependency\plugin.min.js" />
+    <Content Include="Resource\plugins\tinymce\plugins\fullpage\plugin.min.js" />
+    <Content Include="Resource\plugins\tinymce\plugins\fullscreen\plugin.min.js" />
+    <Content Include="Resource\plugins\tinymce\plugins\hr\plugin.min.js" />
+    <Content Include="Resource\plugins\tinymce\plugins\image\plugin.min.js" />
+    <Content Include="Resource\plugins\tinymce\plugins\importcss\plugin.min.js" />
+    <Content Include="Resource\plugins\tinymce\plugins\insertdatetime\plugin.min.js" />
+    <Content Include="Resource\plugins\tinymce\plugins\layer\plugin.min.js" />
+    <Content Include="Resource\plugins\tinymce\plugins\legacyoutput\plugin.min.js" />
+    <Content Include="Resource\plugins\tinymce\plugins\link\plugin.min.js" />
+    <Content Include="Resource\plugins\tinymce\plugins\lists\plugin.min.js" />
+    <Content Include="Resource\plugins\tinymce\plugins\media\moxieplayer.swf" />
+    <Content Include="Resource\plugins\tinymce\plugins\media\plugin.min.js" />
+    <Content Include="Resource\plugins\tinymce\plugins\nonbreaking\plugin.min.js" />
+    <Content Include="Resource\plugins\tinymce\plugins\noneditable\plugin.min.js" />
+    <Content Include="Resource\plugins\tinymce\plugins\pagebreak\plugin.min.js" />
+    <Content Include="Resource\plugins\tinymce\plugins\paste\plugin.min.js" />
+    <Content Include="Resource\plugins\tinymce\plugins\preview\plugin.min.js" />
+    <Content Include="Resource\plugins\tinymce\plugins\print\plugin.min.js" />
+    <Content Include="Resource\plugins\tinymce\plugins\save\plugin.min.js" />
+    <Content Include="Resource\plugins\tinymce\plugins\searchreplace\plugin.min.js" />
+    <Content Include="Resource\plugins\tinymce\plugins\spellchecker\plugin.min.js" />
+    <Content Include="Resource\plugins\tinymce\plugins\tabfocus\plugin.min.js" />
+    <Content Include="Resource\plugins\tinymce\plugins\table\plugin.min.js" />
+    <Content Include="Resource\plugins\tinymce\plugins\template\plugin.min.js" />
+    <Content Include="Resource\plugins\tinymce\plugins\textcolor\plugin.min.js" />
+    <Content Include="Resource\plugins\tinymce\plugins\visualblocks\css\visualblocks.css" />
+    <Content Include="Resource\plugins\tinymce\plugins\visualblocks\plugin.min.js" />
+    <Content Include="Resource\plugins\tinymce\plugins\visualchars\plugin.min.js" />
+    <Content Include="Resource\plugins\tinymce\plugins\wordcount\plugin.min.js" />
+    <Content Include="Resource\plugins\tinymce\skins\lightgray\content.inline.min.css" />
+    <Content Include="Resource\plugins\tinymce\skins\lightgray\content.min.css" />
+    <Content Include="Resource\plugins\tinymce\skins\lightgray\fonts\tinymce-small.svg" />
+    <Content Include="Resource\plugins\tinymce\skins\lightgray\fonts\tinymce.svg" />
+    <Content Include="Resource\plugins\tinymce\skins\lightgray\img\anchor.gif" />
+    <Content Include="Resource\plugins\tinymce\skins\lightgray\img\loader.gif" />
+    <Content Include="Resource\plugins\tinymce\skins\lightgray\img\object.gif" />
+    <Content Include="Resource\plugins\tinymce\skins\lightgray\img\trans.gif" />
+    <Content Include="Resource\plugins\tinymce\skins\lightgray\img\wline.gif" />
+    <Content Include="Resource\plugins\tinymce\skins\lightgray\skin.ie7.min.css" />
+    <Content Include="Resource\plugins\tinymce\skins\lightgray\skin.min.css" />
+    <Content Include="Resource\plugins\tinymce\skins\normal\content.inline.min.css" />
+    <Content Include="Resource\plugins\tinymce\skins\normal\content.min.css" />
+    <Content Include="Resource\plugins\tinymce\skins\normal\fonts\icomoon-small.svg" />
+    <Content Include="Resource\plugins\tinymce\skins\normal\fonts\icomoon.svg" />
+    <Content Include="Resource\plugins\tinymce\skins\normal\img\anchor.gif" />
+    <Content Include="Resource\plugins\tinymce\skins\normal\img\loader.gif" />
+    <Content Include="Resource\plugins\tinymce\skins\normal\img\object.gif" />
+    <Content Include="Resource\plugins\tinymce\skins\normal\img\trans.gif" />
+    <Content Include="Resource\plugins\tinymce\skins\normal\img\wline.gif" />
+    <Content Include="Resource\plugins\tinymce\skins\normal\skin.ie7.min.css" />
+    <Content Include="Resource\plugins\tinymce\skins\normal\skin.min.css" />
+    <Content Include="Resource\plugins\tinymce\themes\modern\theme.min.js" />
+    <Content Include="Resource\plugins\tinymce\tinymce.min.js" />
+    <Content Include="Resource\xml\SliderEntity.xml" />
+    <Content Include="Resource\xml\MenuTabs.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Resource_Service.aspx" />
+    <Content Include="Settings.ascx" />
+    <Content Include="Settings_Empty.ascx" />
+    <Content Include="Setting_Effects.ascx" />
+    <Content Include="Setting_Effect_Style.ascx" />
+    <Content Include="Setting_Library_Synchronize.ascx" />
+    <Content Include="Setting_ManagerGroup.ascx" />
+    <Content Include="Setting_ManagerImportExport.ascx" />
+    <Content Include="Setting_ManagerItem.ascx" />
+    <Content Include="Setting_ManagerLists.ascx" />
+    <Content Include="Setting_ManagerOptions.ascx" />
+    <Content Include="View_Index.ascx" />
+    <Content Include="View_List.ascx" />
+    <Content Include="View_Info.ascx" />
+    <Content Include="功能更新说明.txt" />
+    <Content Include="功能更新说明_EN.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\Message.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Effects\Effect_08_PhotoGallery\Themes\Theme_08_Default\Thumbs.db" />
+    <Content Include="Effects\Effect_09_ResponsiveSlide\Themes\Theme_09_Default\Thumbs.db" />
+    <Content Include="Effects\Effect_11_TransBanner\Themes\Theme_11_Default\Thumbs.db" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Basic\Thumbs.db" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Elegant\Thumbs.db" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Inline\Thumbs.db" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Light\Thumbs.db" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Minimalist\Thumbs.db" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Modern\Thumbs.db" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Panel\Thumbs.db" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Ribbon\Thumbs.db" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Slick\Thumbs.db" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Smooth\Thumbs.db" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Square\Thumbs.db" />
+    <Content Include="Effects\Effect_12_UnoSlider\Themes\Theme_12_Text\Thumbs.db" />
+    <Content Include="Effects\Effect_12_UnoSlider\Thumbs.db" />
+    <Content Include="Effects\Effect_20_Pricing\Themes\Theme_20_Default_01\Thumbs.db" />
+    <Content Include="Effects\Effect_20_Pricing\Themes\Theme_20_Default_02\Thumbs.db" />
+    <Content Include="Effects\Effect_20_Pricing\Themes\Theme_20_Default_03\Thumbs.db" />
+    <Content Include="Effects\Effect_20_Pricing\Themes\Theme_20_Default_04\Thumbs.db" />
+    <Content Include="Effects\Effect_23_ImageCarousel\Themes\Theme_23_Default\Thumbs.db" />
+    <None Include="ModuleCore\XCode\DataAccessLayer\DAL.cd" />
+    <None Include="DNNGo_DNNGalleryPro.dnn">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Providers\DataProviders\SqlDataProvider\01.00.00.SqlDataProvider" />
+    <None Include="Providers\DataProviders\SqlDataProvider\01.01.00.SqlDataProvider" />
+    <None Include="Providers\DataProviders\SqlDataProvider\02.02.00.SqlDataProvider" />
+    <Content Include="Providers\DataProviders\SqlDataProvider\04.00.00.SqlDataProvider" />
+    <None Include="Providers\DataProviders\SqlDataProvider\02.06.00.SqlDataProvider" />
+    <Content Include="Providers\DataProviders\SqlDataProvider\04.06.00.SqlDataProvider" />
+    <Content Include="Providers\DataProviders\SqlDataProvider\05.01.00.SqlDataProvider" />
+    <None Include="Resource\fonts\fontawesome-webfont.eot" />
+    <None Include="Resource\fonts\fontawesome-webfont.ttf" />
+    <None Include="Resource\fonts\fontawesome-webfont.woff" />
+    <None Include="Resource\fonts\FontAwesome.otf" />
+    <None Include="Resource\fonts\fonts\clip-font.eot" />
+    <None Include="Resource\fonts\fonts\clip-font.ttf" />
+    <None Include="Resource\fonts\fonts\clip-font.woff" />
+    <None Include="Resource\plugins\autosize\autosize.jquery.json" />
+    <None Include="Resource\plugins\autosize\bower.json" />
+    <None Include="Resource\plugins\autosize\package.json" />
+    <None Include="Resource\plugins\autosize\readme.md" />
+    <None Include="Resource\plugins\bootstrap-colorpicker\less\bootstrap-colorpicker.less" />
+    <None Include="Resource\plugins\bootstrap-datepicker\less\datepicker.less" />
+    <None Include="Resource\plugins\bootstrap-paginator\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Resource\plugins\bootstrap-paginator\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="Resource\plugins\bootstrap-paginator\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Resource\plugins\bootstrap-social-buttons\LICENSE" />
+    <None Include="Resource\plugins\bootstrap-social-buttons\README.md" />
+    <None Include="Resource\plugins\bootstrap-social-buttons\social-buttons-3.less" />
+    <None Include="Resource\plugins\bootstrap-social-buttons\social-buttons.less" />
+    <None Include="Resource\plugins\bootstrap-switch\.gitignore" />
+    <None Include="Resource\plugins\bootstrap-switch\bower.json" />
+    <None Include="Resource\plugins\bootstrap-switch\component.json" />
+    <None Include="Resource\plugins\bootstrap-switch\composer.json" />
+    <None Include="Resource\plugins\bootstrap-switch\CONTRIBUTING.md" />
+    <None Include="Resource\plugins\bootstrap-switch\LICENSE" />
+    <None Include="Resource\plugins\bootstrap-switch\README.md" />
+    <None Include="Resource\plugins\bootstrap-switch\static\less\bootstrap-switch.less" />
+    <None Include="Resource\plugins\bootstrap-switch\static\less\deps\mixins.less" />
+    <None Include="Resource\plugins\bootstrap-switch\static\less\deps\variables.less" />
+    <None Include="Resource\plugins\bootstrap-timepicker\.bowerrc" />
+    <None Include="Resource\plugins\bootstrap-timepicker\.gitignore" />
+    <None Include="Resource\plugins\bootstrap-timepicker\.travis.yml" />
+    <None Include="Resource\plugins\bootstrap-timepicker\component.json" />
+    <None Include="Resource\plugins\bootstrap-timepicker\composer.json" />
+    <None Include="Resource\plugins\bootstrap-timepicker\less\timepicker.less" />
+    <None Include="Resource\plugins\bootstrap-timepicker\LICENSE" />
+    <None Include="Resource\plugins\bootstrap-timepicker\package.json" />
+    <None Include="Resource\plugins\bootstrap-timepicker\README.md" />
+    <None Include="Resource\plugins\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Resource\plugins\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="Resource\plugins\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Resource\plugins\ckeditor\plugins\scayt\LICENSE.md" />
+    <Content Include="Resource\plugins\ckeditor\plugins\scayt\README.md" />
+    <Content Include="Resource\plugins\ckeditor\plugins\wsc\LICENSE.md" />
+    <Content Include="Resource\plugins\ckeditor\plugins\wsc\README.md" />
+    <None Include="Resource\plugins\datepicker\less\datepicker.less" />
+    <None Include="Resource\plugins\flot\API.md" />
+    <None Include="Resource\plugins\flot\build.log" />
+    <None Include="Resource\plugins\flot\CONTRIBUTING.md" />
+    <None Include="Resource\plugins\flot\examples\ajax\data-eu-gdp-growth-1.json" />
+    <None Include="Resource\plugins\flot\examples\ajax\data-eu-gdp-growth-2.json" />
+    <None Include="Resource\plugins\flot\examples\ajax\data-eu-gdp-growth-3.json" />
+    <None Include="Resource\plugins\flot\examples\ajax\data-eu-gdp-growth-4.json" />
+    <None Include="Resource\plugins\flot\examples\ajax\data-eu-gdp-growth-5.json" />
+    <None Include="Resource\plugins\flot\examples\ajax\data-eu-gdp-growth.json" />
+    <None Include="Resource\plugins\flot\examples\ajax\data-japan-gdp-growth.json" />
+    <None Include="Resource\plugins\flot\examples\ajax\data-usa-gdp-growth.json" />
+    <None Include="Resource\plugins\flot\examples\axes-time-zones\tz\africa" />
+    <None Include="Resource\plugins\flot\examples\axes-time-zones\tz\antarctica" />
+    <None Include="Resource\plugins\flot\examples\axes-time-zones\tz\asia" />
+    <None Include="Resource\plugins\flot\examples\axes-time-zones\tz\australasia" />
+    <None Include="Resource\plugins\flot\examples\axes-time-zones\tz\backward" />
+    <None Include="Resource\plugins\flot\examples\axes-time-zones\tz\etcetera" />
+    <None Include="Resource\plugins\flot\examples\axes-time-zones\tz\europe" />
+    <None Include="Resource\plugins\flot\examples\axes-time-zones\tz\factory" />
+    <None Include="Resource\plugins\flot\examples\axes-time-zones\tz\iso3166.tab" />
+    <None Include="Resource\plugins\flot\examples\axes-time-zones\tz\leapseconds" />
+    <None Include="Resource\plugins\flot\examples\axes-time-zones\tz\northamerica" />
+    <None Include="Resource\plugins\flot\examples\axes-time-zones\tz\pacificnew" />
+    <None Include="Resource\plugins\flot\examples\axes-time-zones\tz\solar87" />
+    <None Include="Resource\plugins\flot\examples\axes-time-zones\tz\solar88" />
+    <None Include="Resource\plugins\flot\examples\axes-time-zones\tz\solar89" />
+    <None Include="Resource\plugins\flot\examples\axes-time-zones\tz\southamerica" />
+    <None Include="Resource\plugins\flot\examples\axes-time-zones\tz\systemv" />
+    <None Include="Resource\plugins\flot\examples\axes-time-zones\tz\yearistype.sh" />
+    <None Include="Resource\plugins\flot\examples\axes-time-zones\tz\zone.tab" />
+    <None Include="Resource\plugins\flot\FAQ.md" />
+    <None Include="Resource\plugins\flot\Makefile" />
+    <None Include="Resource\plugins\flot\NEWS.md" />
+    <None Include="Resource\plugins\flot\PLUGINS.md" />
+    <None Include="Resource\plugins\flot\README.md" />
+    <None Include="Resource\plugins\font-awesome\fonts\fontawesome-webfont.eot" />
+    <None Include="Resource\plugins\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <None Include="Resource\plugins\font-awesome\fonts\fontawesome-webfont.woff" />
+    <None Include="Resource\plugins\font-awesome\fonts\FontAwesome.otf" />
+    <None Include="Resource\plugins\font-awesome\less\bordered-pulled.less" />
+    <None Include="Resource\plugins\font-awesome\less\core.less" />
+    <None Include="Resource\plugins\font-awesome\less\fixed-width.less" />
+    <None Include="Resource\plugins\font-awesome\less\font-awesome.less" />
+    <None Include="Resource\plugins\font-awesome\less\icons.less" />
+    <None Include="Resource\plugins\font-awesome\less\larger.less" />
+    <None Include="Resource\plugins\font-awesome\less\list.less" />
+    <None Include="Resource\plugins\font-awesome\less\mixins.less" />
+    <None Include="Resource\plugins\font-awesome\less\path.less" />
+    <None Include="Resource\plugins\font-awesome\less\rotated-flipped.less" />
+    <None Include="Resource\plugins\font-awesome\less\spinning.less" />
+    <None Include="Resource\plugins\font-awesome\less\stacked.less" />
+    <None Include="Resource\plugins\font-awesome\less\variables.less" />
+    <None Include="Resource\plugins\font-awesome\scss\font-awesome.scss" />
+    <None Include="Resource\plugins\font-awesome\scss\_bordered-pulled.scss" />
+    <None Include="Resource\plugins\font-awesome\scss\_core.scss" />
+    <None Include="Resource\plugins\font-awesome\scss\_fixed-width.scss" />
+    <None Include="Resource\plugins\font-awesome\scss\_icons.scss" />
+    <None Include="Resource\plugins\font-awesome\scss\_larger.scss" />
+    <None Include="Resource\plugins\font-awesome\scss\_list.scss" />
+    <None Include="Resource\plugins\font-awesome\scss\_mixins.scss" />
+    <None Include="Resource\plugins\font-awesome\scss\_path.scss" />
+    <None Include="Resource\plugins\font-awesome\scss\_rotated-flipped.scss" />
+    <None Include="Resource\plugins\font-awesome\scss\_spinning.scss" />
+    <None Include="Resource\plugins\font-awesome\scss\_stacked.scss" />
+    <None Include="Resource\plugins\font-awesome\scss\_variables.scss" />
+    <None Include="Resource\plugins\jQuery-Tags-Input\bower.json" />
+    <None Include="Resource\plugins\jQuery-Tags-Input\README.md" />
+    <None Include="Resource\plugins\jquery-ui-touch-punch\README.md" />
+    <None Include="Resource\plugins\ladda-bootstrap\.DS_Store" />
+    <None Include="Resource\plugins\ladda-bootstrap\css\ladda-theme.scss" />
+    <None Include="Resource\plugins\ladda-bootstrap\css\ladda.scss" />
+    <None Include="Resource\plugins\ladda-bootstrap\LICENSE" />
+    <None Include="Resource\plugins\ladda-bootstrap\params.json" />
+    <None Include="Resource\plugins\ladda-bootstrap\README.md" />
+    <None Include="Resource\plugins\nestable\README.md" />
+    <None Include="Resource\plugins\perfect-scrollbar\.csslintrc" />
+    <None Include="Resource\plugins\perfect-scrollbar\.gitignore" />
+    <None Include="Resource\plugins\perfect-scrollbar\.jshintrc" />
+    <None Include="Resource\plugins\perfect-scrollbar\.travis.yml" />
+    <None Include="Resource\plugins\perfect-scrollbar\package.json" />
+    <None Include="Resource\plugins\perfect-scrollbar\perfect-scrollbar.jquery.json" />
+    <None Include="Resource\plugins\perfect-scrollbar\README.md" />
+    <None Include="Resource\plugins\tinymce\langs\readme.md" />
+    <None Include="Resource\plugins\tinymce\skins\lightgray\fonts\readme.md" />
+    <None Include="Resource\plugins\tinymce\skins\lightgray\fonts\tinymce-small.eot" />
+    <None Include="Resource\plugins\tinymce\skins\lightgray\fonts\tinymce-small.ttf" />
+    <None Include="Resource\plugins\tinymce\skins\lightgray\fonts\tinymce-small.woff" />
+    <None Include="Resource\plugins\tinymce\skins\lightgray\fonts\tinymce.eot" />
+    <None Include="Resource\plugins\tinymce\skins\lightgray\fonts\tinymce.ttf" />
+    <None Include="Resource\plugins\tinymce\skins\lightgray\fonts\tinymce.woff" />
+    <None Include="Resource\plugins\tinymce\skins\normal\fonts\icomoon-small.eot" />
+    <None Include="Resource\plugins\tinymce\skins\normal\fonts\icomoon-small.ttf" />
+    <None Include="Resource\plugins\tinymce\skins\normal\fonts\icomoon-small.woff" />
+    <None Include="Resource\plugins\tinymce\skins\normal\fonts\icomoon.eot" />
+    <None Include="Resource\plugins\tinymce\skins\normal\fonts\icomoon.ttf" />
+    <None Include="Resource\plugins\tinymce\skins\normal\fonts\icomoon.woff" />
+    <None Include="Resource\plugins\tinymce\skins\normal\fonts\readme.md" />
+    <None Include="Resource\plugins\tinymce\skins\normal\skin.json" />
+    <Content Include="Resource_jQueryFileUpload.ashx" />
+    <None Include="Providers\DataProviders\SqlDataProvider\Uninstall.SqlDataProvider" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\Setting_TonkenCenter.ascx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\Settings.ascx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\View_Index.ascx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Effects\Effect_09_ResponsiveSlide\images\" />
+    <Folder Include="Effects\Effect_09_ResponsiveSlide\Themes\Theme_09_Default\images\" />
+    <Folder Include="Effects\Effect_14_FAQ\css\" />
+    <Folder Include="ModuleCore\Controls\" />
+    <Folder Include="Resource\Controls\" />
+    <Folder Include="Resource\plugins\ckeditor\adapters\" />
+    <Folder Include="Resource\plugins\ckeditor\lang\" />
+    <Folder Include="Resource\plugins\ckeditor\skins\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\Settings_Empty.ascx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\Setting_Effects.ascx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\Setting_ManagerLists.ascx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\Setting_ManagerOptions.ascx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\Setting_Effect_Style.ascx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\Setting_Effect_Theme.ascx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\Setting_ManagerImportExport.ascx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\Setting_Library.ascx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\Index_Manager.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\Setting_ManagerItem.ascx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\Setting_ManagerGroup.ascx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\Setting_jQuery.ascx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\License.ascx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\Setting_Library_Synchronize.ascx.resx" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>23364</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

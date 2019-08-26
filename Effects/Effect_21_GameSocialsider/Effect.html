@@ -1,0 +1,165 @@
+﻿
+<ul class="FixedIcon_list $ThemeName" id="FixedIcon_${ModuleID}">
+	<li class="visible-xs"><a id="hidden_btn1"  href="javascript:;">
+  <span class="fa fa-angle-left"></span>
+  <span class="icontitle"><</span>  </a> </li>
+  #if($SliderList.Count > 0) 
+  #foreach($SliderItem in $SliderList)
+  <li><a href="${xf.ViewLinkUrl(${xf.ViewSliderSetting($SliderItem,"IconLink","")})}" target="${xf.ViewSliderSetting($SliderItem,"IconLinkTarget","_blank")}" style="background-color:${xf.ViewSliderSetting($SliderItem,"IconBackground","#333333")}">
+  <span class="${xf.ViewSliderSetting($SliderItem,"IconStyle","fa fa-facebook")}"></span>
+  #if(${xf.ViewSliderSetting($SliderItem,"Title","")} !="")<span class="icontitle">${xf.ViewSliderSetting($SliderItem,"Title","")}</span>#end
+  </a> </li>
+  #end
+  #end
+  <li class="hidden-xs"><a id="hidden_btn" href="javascript:;">
+  <span class="fa fa-angle-left"></span>
+  <span class="icontitle"><</span>  </a> </li>
+</ul>
+
+<style type="text/css">
+
+#FixedIcon_${ModuleID}{
+	position:${xf.ViewXmlSetting("Attachment","Fixed")};	
+	#if(${xf.ViewXmlSetting("Position","Left Top")} == "Left Top")
+		left:-20px;
+		top:10%;
+	#elseif(${xf.ViewXmlSetting("Position","Left Top")} == "Left Middle")
+		left:-20px;
+		top:50%;
+		transform:translateY(-50%);
+		-webkit-transform:translateY(-50%);
+	#elseif(${xf.ViewXmlSetting("Position","Left Top")} == "Left Bottom")
+		left:-20px;
+		bottom:10%;
+	#elseif(${xf.ViewXmlSetting("Position","Left Top")} == "Right top")
+		left:auto;
+		right:-20px;
+		top:10%;
+	#elseif(${xf.ViewXmlSetting("Position","Left Top")} == "Right Middle")
+		left:auto;
+		right:-20px;
+		top:50%;
+		transform:translateY(-50%);
+		-webkit-transform:translateY(-50%);
+	#elseif(${xf.ViewXmlSetting("Position","Left Top")} == "Right Bottom")
+		left:auto;
+		right:-20px;
+		bottom:10%;
+	#end
+	transition: 		all ease-in 200ms;
+	-moz-transition: 	all ease-in 200ms; /* Firefox 4 */
+	-webkit-transition: all ease-in 200ms; /* Safari and Chrome */
+	-o-transition: 		all ease-in 200ms; /* Opera */
+	-ms-transition: 	all ease-in 200ms; /* IE9? */	
+}
+#FixedIcon_${ModuleID} a{
+	width:${xf.ViewXmlSetting("iconsize","42")}px;
+	height:${xf.ViewXmlSetting("iconsize","42")}px;
+	line-height:${xf.ViewXmlSetting("iconsize","42")}px;
+	text-align:center;
+	font-size:${xf.ViewXmlSetting("iconfontsize","20")}px;
+	color:${xf.ViewXmlSetting("IconFontColor","#FFFFFF")};
+	margin-bottom:${xf.ViewXmlSetting("iconspacer","1")}px;
+	border-radius:${xf.ViewXmlSetting("Edgeradius","0")}px;
+	-moz-border-radius:${xf.ViewXmlSetting("Edgeradius","0")}px;
+	-webkit-border-radius:${xf.ViewXmlSetting("Edgeradius","0")}px;
+	
+	#if(${xf.ViewXmlSetting("Position","Left Top")} == "Left Top" || ${xf.ViewXmlSetting("Position","Left Top")} == "Left Middle" || ${xf.ViewXmlSetting("Position","Left Top")} == "Left Bottom")
+		padding-left:20px;
+	#else
+		padding-right:20px;
+	#end
+#if(${xf.ViewXmlSetting("Shadow","true")} == "true")
+	box-shadow:0 0 5px rgba(0,0,0,0.6);	
+	-moz-box-shadow:0 0 5px rgba(0,0,0,0.6); 	
+	-webkit-box-shadow:0 0 5px rgba(0,0,0,0.6);
+#end
+
+}
+
+#if(${xf.ViewXmlSetting("Opacityhover","true")} == "true")
+#FixedIcon_${ModuleID} a{
+	opacity:0.7;
+	filter:alpha(opacity=70);
+	transition: 		all ease-in 200ms;
+	-moz-transition: 	all ease-in 200ms; /* Firefox 4 */
+	-webkit-transition: all ease-in 200ms; /* Safari and Chrome */
+	-o-transition: 		all ease-in 200ms; /* Opera */
+	-ms-transition: 	all ease-in 200ms; /* IE9? */
+}
+#FixedIcon_${ModuleID} a:hover{
+	filter:alpha(opacity=100);
+	opacity:1;
+}
+#end
+#if(${xf.ViewXmlSetting("Halfhidden","true")} == "true")
+#if(${xf.ViewXmlSetting("Position","Left Top")} == "Left Top" || ${xf.ViewXmlSetting("Position","Left Top")} == "Left Middle" || ${xf.ViewXmlSetting("Position","Left Top")} == "Left Bottom")
+#FixedIcon_${ModuleID} a{
+	transform:translateX(-${xf.ViewXmlSetting("Hiddenspacer","10")}px);
+	-webkit-transform:translateX(-${xf.ViewXmlSetting("Hiddenspacer","10")}px);
+}
+#else
+#FixedIcon_${ModuleID} a{
+	transform:translateX(${xf.ViewXmlSetting("Hiddenspacer","10")}px);
+	-webkit-transform:translateX(${xf.ViewXmlSetting("Hiddenspacer","10")}px);
+}
+#end
+#FixedIcon_${ModuleID} a:hover{
+	transform:translateX(0);
+	-webkit-transform:translateX(0);
+}
+#end
+
+
+</style>
+
+<script type="text/javascript">
+$("#FixedIcon_${ModuleID}").insertAfter("body");
+jQuery(document).ready(function ($) {
+	
+				$("#hidden_btn,#hidden_btn1,#hidden_btn2").toggle(
+		  function () {
+		  	$(this).addClass("current");
+		    $(".FixedIcon_list li a").not( $("#hidden_btn,#hidden_btn1") ).addClass("selected");
+		  },
+		  function () {
+		  	 $(this).removeClass("current");
+		    $(".FixedIcon_list li a").not( $("#hidden_btn,#hidden_btn1") ).removeClass("selected");
+		  }
+		);
+			
+
+						if ($(window).width() < 767) {
+		        $(".FixedIcon_list li a").removeClass("selected");
+		        $("#hidden_btn,#hidden_btn1,#hidden_btn2").removeClass("current");
+		      $(".FixedIcon_list").before("<a id=\"hidden_btn2\" href=\"javascript:;\"><span class=\"fa fa-angle-left\"></span></a>");
+		      var btn_w=$(".FixedIcon_list li").width();
+		      $("#hidden_btn2").width(btn_w);
+		    }
+
+		    $(window).resize(function(){
+			if ($(window).width() < 767) {
+		        $(".FixedIcon_list li a").removeClass("selected");
+		        if($("#hidden_btn2").length < 0){
+		        $(".FixedIcon_list").before("<a id=\"hidden_btn2\" href=\"javascript:;\"><span class=\"fa fa-angle-left\"></span></a>");
+				}
+		      var btn_w=$(".FixedIcon_list li").width();
+		      $("#hidden_btn2").width(btn_w);
+		    }
+      });
+
+		    	$("#hidden_btn2").toggle(
+		  function () {
+		  	$(this).addClass("current");
+		    $(".FixedIcon_list").addClass("selected");
+		  },
+		  function () {
+		  	 $(this).removeClass("current");
+		    $(".FixedIcon_list").removeClass("selected");
+		  }
+		);
+	 });
+
+</script>
+
+

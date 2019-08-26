@@ -1,0 +1,20 @@
+version: 03.00.00
+1. Add ResponsiveTabs effect, now it has integrated 25 effects.
+
+version: 04.00.00
+1.重新设计管理界面的架构,让模块管理更加方便高效。
+
+
+
+version: 04.01.00
+1.优化部分效果参数不合理的情况。
+2.解决部分效果在某些环境下出现bug的情况。
+3.替换第12个3D效果的插件及运行方式。
+
+
+version: 04.02.00
+1.Add paging function for "Effect_10_FlipWall" effect.
+2.Add paging function for  "Effect_18_ImagesLoaded" effect.
+3.Add paging function for  "Effect_19_Portfolio" effect.
+4.Add paging function for  "Effect_20_PhotoGallery" effect.
+5.Add paging function for  "Effect_24_OurTeam" effect.

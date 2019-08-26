@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DNNGo_DNNGalleryPro>
+  <Settings>
+  
+       <Setting>
+           <Name><![CDATA[firstColumnName]]></Name>
+           <Alias><![CDATA[First column name]]></Alias>
+           <Width><![CDATA[250]]></Width>
+           <Rows><![CDATA[1]]></Rows>
+           <DefaultValue><![CDATA[Game]]></DefaultValue>
+           <ControlType><![CDATA[TextBox]]></ControlType>
+           <Direction><![CDATA[Vertical]]></Direction>
+           <ListContent><![CDATA[]]></ListContent>
+           <Description><![CDATA[]]></Description>
+           <Required><![CDATA[True]]></Required>
+           <Verification><![CDATA[optional]]></Verification>
+           <Group><![CDATA[]]></Group>
+           <Categories><![CDATA[]]></Categories>
+           <Layout><![CDATA[]]></Layout>
+       </Setting>
+
+		<Setting>
+           <Name><![CDATA[secondColumnName]]></Name>
+           <Alias><![CDATA[Second column name]]></Alias>
+           <Width><![CDATA[250]]></Width>
+           <Rows><![CDATA[1]]></Rows>
+           <DefaultValue><![CDATA[Type]]></DefaultValue>
+           <ControlType><![CDATA[TextBox]]></ControlType>
+           <Direction><![CDATA[Vertical]]></Direction>
+           <ListContent><![CDATA[]]></ListContent>
+           <Description><![CDATA[]]></Description>
+           <Required><![CDATA[True]]></Required>
+           <Verification><![CDATA[optional]]></Verification>
+           <Group><![CDATA[]]></Group>
+           <Categories><![CDATA[]]></Categories>
+           <Layout><![CDATA[]]></Layout>
+       </Setting>
+
+
+       <Setting>
+           <Name><![CDATA[thirdColumnName]]></Name>
+           <Alias><![CDATA[Third column name]]></Alias>
+           <Width><![CDATA[250]]></Width>
+           <Rows><![CDATA[1]]></Rows>
+           <DefaultValue><![CDATA[Download]]></DefaultValue>
+           <ControlType><![CDATA[TextBox]]></ControlType>
+           <Direction><![CDATA[Vertical]]></Direction>
+           <ListContent><![CDATA[]]></ListContent>
+           <Description><![CDATA[]]></Description>
+           <Required><![CDATA[True]]></Required>
+           <Verification><![CDATA[optional]]></Verification>
+           <Group><![CDATA[]]></Group>
+           <Categories><![CDATA[]]></Categories>
+           <Layout><![CDATA[]]></Layout>
+       </Setting>
+  
+	  
+  </Settings>
+</DNNGo_DNNGalleryPro>
+
+
+

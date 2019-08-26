@@ -1,0 +1,29 @@
+﻿/************************************************************/
+/*****              SqlDataProvider                     *****/
+/*****                                                  *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/** Drop FAQs Table **/
+
+ 
+
+DROP TABLE {databaseOwner}[{objectQualifier}DNNGo_DNNGalleryPro_Slider]
+GO
+DROP TABLE {databaseOwner}[{objectQualifier}DNNGo_DNNGalleryPro_Layer]
+GO
+DROP TABLE {databaseOwner}[{objectQualifier}DNNGo_DNNGalleryPro_Group]
+GO
+DROP TABLE {databaseOwner}[{objectQualifier}DNNGo_DNNGalleryPro_Files]
+GO
+DROP TABLE {databaseOwner}[{objectQualifier}DNNGo_DNNGalleryPro_Slider_Group]
+GO
+ 
+
+/************************************************************/
+/*****              SqlDataProvider                     *****/
+/************************************************************/

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DNNGo_DNNGalleryPro>
+  <EffectDB>
+    <Name>
+      <![CDATA[Cusotm_downloads]]>
+    </Name>
+    <Description>
+      <![CDATA[]]>
+    </Description>
+    <Version>
+      <![CDATA[01.00.00]]>
+    </Version>
+    <Thumbnails>
+      <![CDATA[Preview.jpg]]>
+    </Thumbnails>
+    <EffectScript>
+      <![CDATA[datatables.min.css,responsive.min.css,datatables.min.js,responsive.min.js]]>
+    </EffectScript>
+    <GlobalScript>
+      <![CDATA[]]>
+    </GlobalScript>
+    <DemoUrl>
+      <![CDATA[]]>
+    </DemoUrl>
+	<LayerType><![CDATA[]]></LayerType>
+	<Ajax><![CDATA[false]]></Ajax>
+	<Responsive><![CDATA[true]]></Responsive>
+	<Layers><![CDATA[false]]></Layers>
+    <Pager><![CDATA[false]]></Pager>
+	<Groups><![CDATA[false]]></Groups>
+  </EffectDB>
+</DNNGo_DNNGalleryPro>

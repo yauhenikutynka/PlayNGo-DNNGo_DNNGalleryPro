@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DNNGo_DNNGalleryPro>
+  <EffectDB>
+    <Name>
+      <![CDATA[Effect_21_GameSocialsider]]>
+    </Name>
+    <Description>
+      <![CDATA[]]>
+    </Description>
+    <Version>
+      <![CDATA[01.00.00]]>
+    </Version>
+    <Thumbnails>
+      <![CDATA[http://www.dnngo.net/DesktopModules/DNNGo_DNNGalleryPro/Effects/Effect_21_Socialsider/preview.jpg]]>
+    </Thumbnails>
+    <EffectScript>
+      <![CDATA[]]>
+    </EffectScript>
+    <GlobalScript>
+      <![CDATA[font-icon.css]]>
+    </GlobalScript>
+    <DemoUrl>
+      <![CDATA[http://www.dnngo.net/OurModules/DNNGalleryPro/FlipBox.aspx]]>
+    </DemoUrl>
+	<LayerType><![CDATA[]]></LayerType>
+	<Ajax><![CDATA[false]]></Ajax>
+	<Responsive><![CDATA[true]]></Responsive>
+	<Layers><![CDATA[false]]></Layers>
+    <Pager><![CDATA[true]]></Pager>
+	<Groups><![CDATA[false]]></Groups>
+  </EffectDB>
+</DNNGo_DNNGalleryPro>

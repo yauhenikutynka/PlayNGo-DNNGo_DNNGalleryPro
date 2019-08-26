@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DNNGo_DNNGalleryPro>
+  <EffectDB>
+    <Name>
+      <![CDATA[playngo_ageverification]]>
+    </Name>
+    <Description>
+      <![CDATA[]]>
+    </Description>
+    <Version>
+      <![CDATA[01.00.00]]>
+    </Version>
+    <Thumbnails>
+      <![CDATA[preview.jpg]]>
+    </Thumbnails>
+    <EffectScript>
+      <![CDATA[js.cookie.js]]>
+    </EffectScript>
+    <GlobalScript>
+      <![CDATA[]]>
+    </GlobalScript>
+    <DemoUrl>
+      <![CDATA[http://www.dnngo.net/OurModules/DNNGalleryPro/FlipBox.aspx]]>
+    </DemoUrl>
+	<LayerType><![CDATA[false]]></LayerType>
+	<Ajax><![CDATA[false]]></Ajax>
+	<Responsive><![CDATA[false]]></Responsive>
+	<Layers><![CDATA[false]]></Layers>
+    <Pager><![CDATA[false]]></Pager>
+	<Groups><![CDATA[false]]></Groups>
+	<Gallery><![CDATA[false]]></Gallery>
+	<Sliders><![CDATA[false]]></Sliders>
+ 
+
+  </EffectDB>
+</DNNGo_DNNGalleryPro>
